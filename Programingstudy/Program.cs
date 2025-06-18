@@ -14,9 +14,9 @@ namespace Programingstudy
             //StageMain();
             //AttackWhile();
             //AttackCritcalWhile();
-            MonsterListMain();
+            //MonsterListMain();
             //PlayerBattleMain();
-            //PlayerbattlePraticeMain();
+            PlayerbattlePraticeMain();
         }
 
         static int Add(int a, int b)
