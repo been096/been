@@ -14,9 +14,9 @@ namespace Programingstudy
             //StageMain();
             //AttackWhile();
             //AttackCritcalWhile();
-            MonsterListMain();
+            //MonsterListMain();
             //PlayerBattleMain();
-            //PlayerbattlePraticeMain();
+            PlayerbattlePraticeMain();
         }
 
         static int Add(int a, int b)
@@ -226,7 +226,7 @@ namespace Programingstudy
         }
         
         //여기에 전투코드를 삽입하면 작동한다.
-        
+        //커밋
         
         
         
