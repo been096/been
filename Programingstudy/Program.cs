@@ -1,37 +1,8 @@
-﻿namespace Practice2
+﻿using Programingstudy;
+
+namespace Practice2
 {
     
-    class Player
-    {
-        int nAtk;
-        int nHP;
-
-        public Player(int hp = 100, int atk = 10)
-        {
-            nAtk = atk;
-            nHP = hp;
-        }
-
-        public void Attack(Player target)
-        {
-            target.nHP -= this.nAtk;
-        }
-
-        public bool Death()
-        {
-            if (this.nHP <= 0)
-                return true;
-            else
-                return false;
-        }
-
-        public void Display(string msg = "")
-        {
-            Console.Write(msg)
-            Console.WriteLine("Atk/HP" + this.nAtk + "/" + this.nHP);
-        }
-    }
-
 
     internal class Program
     {
@@ -47,26 +18,8 @@
             //AttackCritcalWhile();
             //MonsterListMain();
             //PlayerBattleMain();
-            MonsterSelectMain();
-        }
-
-        static void ClassPlayerbattleMain()
-        {
-            Player player = new Player();
-            Player monster = new Player();
-
-            while(!player.Death() && !monster.Death())
-            {
-                if (player.Death() == false)
-                {
-                    player.Attack(monster);
-                    player.Display("[Player turn");
-                    Console.WriteLine("============================");
-                }
-            }
-            
-
-
+            //MonsterSelectMain();
+            RPGPlayer.ClassPlayerbattleMain();
         }
 
 
