@@ -13,3 +13,10 @@ C:\Users\Administrator\source\repos\been\Programingstudy\obj\Debug\net8.0\refint
 C:\Users\Administrator\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.pdb
 C:\Users\Administrator\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.genruntimeconfig.cache
 C:\Users\Administrator\source\repos\been\Programingstudy\obj\Debug\net8.0\ref\Programingstudy.dll
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.AssemblyInfo.cs
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.sourcelink.json
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.dll
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\refint\Programingstudy.dll
