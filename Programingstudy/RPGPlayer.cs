@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Security;
 using System.Text;
@@ -96,7 +97,7 @@ namespace Programingstudy
             string strInput = Console.ReadLine();
 
             int nMonsterAtk = 10;
-            int nMonsterHP = 100;
+            int nMonsterHP = 10;
             string strMonster = "none";
 
             switch (strInput)
@@ -140,10 +141,10 @@ namespace Programingstudy
         {
             List<Player> listMonster = new List<Player>();
 
-            listMonster.Add(new Player("Slime", 5, 20, 20));
-            listMonster.Add(new Player("Skeleton", 10, 30, 40, 1, 50));
-            listMonster.Add(new Player("Zombie", 20, 50, 50, 1, 70));
-            listMonster.Add(new Player("Dragon", 50, 200, 1000, 1, 2000));
+            listMonster.Add(new Player("Slime", 5, 20, 20, 1, 30, "Slime"));
+            listMonster.Add(new Player("Skeleton", 10, 30, 40, 1, 50, "Skeleton"));
+            listMonster.Add(new Player("Zombie", 20, 50, 50, 1, 70,"Zombie"));
+            listMonster.Add(new Player("Dragon", 50, 200, 1000, 1, 2000,"Dragon"));
             
             int nSelectIdx = -1;
 
@@ -180,7 +181,7 @@ namespace Programingstudy
                 }
 
                 Player monster = listMonster[nSelectIdx];
-                monster.Health();
+                monster.Heal();
                 BattleMain(player, monster);
 
                 if(player.Death())
@@ -194,6 +195,21 @@ namespace Programingstudy
                     Console.WriteLine("The End!");
                     break;
                 }
+
+                if (monster.Death())
+                {
+                    Console.WriteLine("Monster Death!");
+                    player.stillEXP(monster);
+                    player.LevelUP();
+
+                    if (!player.MOnsterCollection.Contains(monster.Name))
+                    {
+                        player.MOnsterCollection.Add(monster.Name);
+                        Console.WriteLine($"{monster.Name}을(를) 획득했습니다!");
+                    }
+
+                    player.Display();
+                }
             }
         }
 
@@ -206,8 +222,9 @@ namespace Programingstudy
         int nLevel;
         int nEXP;
         int nMAXEXP;
+        string nGetMonster;
 
-        public Player(string name, int hp = 100, int atk = 10, int exp = 0, int level = 1, int mxp = 20)
+        public Player(string name, int hp = 100, int atk = 10, int exp = 20, int level = 1, int mxp = 20, string nGetMonster = "")
         {
             Name = name;
             nHP = hp;
@@ -215,6 +232,7 @@ namespace Programingstudy
             nEXP = exp;
             nLevel = level;
             nMAXEXP = mxp;
+            nGetMonster = nGetMonster;
         }
 
         public void Attack(Player target)
@@ -234,7 +252,7 @@ namespace Programingstudy
         public void Display(string msg = "")
         {
             Console.WriteLine(msg);
-            Console.WriteLine(Name + " Atk/HP:" + this.nAtk + "/" + this.nHP + "\tMAXEXP/EXP:" + this.nMAXEXP + "/" + this.nEXP + "\tLv" + this.nLevel);
+            Console.WriteLine(Name + " Atk/HP:" + this.nAtk + "/" + this.nHP + "\tMAXEXP/EXP:" + this.nMAXEXP + "/" + this.nEXP + "\tLv" + this.nLevel + "\t포획 몬스터" + this.nGetMonster);
         }
 
         public void stillEXP(Player target)
@@ -248,15 +266,15 @@ namespace Programingstudy
             if (this.nEXP >= nMAXEXP)
             {
                 this.nLevel += 1;
+                this.nEXP -= nMAXEXP;
                 this.nMAXEXP *= 2;
-                this.nEXP -= nEXP;
                 this.nHP += 20;
                 this.nAtk += 20;
                 Console.WriteLine("LEVEL UP!");
             }
         }
 
-        public void Health()
+        public void Heal()
         {
             if (nHP <= 0)
             {
@@ -270,9 +288,14 @@ namespace Programingstudy
                     nHP = 200;
             }
         }
+
+        public List<string> MOnsterCollection = new List<string>();
+
     }
     //플레이어가 레벨업한 것이 초기화됐던 이유 ; while문 밑에 플레이어 선언이 있었기 때문 -> 플레이어 선언을 while문 위에 두는 것으로 해결. while문 안에 있으면 평원에 몬스터를 잡고 무덤으로 가면 매번 플레이어가 새로 호출됨
     //몬스터가 죽고 다시 출연하지 않는 문제 : 몬스터가 죽어있기 때문에 출연하지 않음 -> 몬스터가 죽었다는 의미 -> 몬스터의 HP가 0보다 작거나 같을 때 죽음 -> 몬스터의 피를 복구(초기화)시켜야함
     //해결방법 1. switch문 안에 피를 복구시키는 함수를 넣는다 -> 몬스터 HP 선언 함수를 Public화 시키고 HP를 넣어준다.
     //해결방법 2. 몬스터 HP를 복구하는(몬스터를 초기화시키는) 함수를 새로 생성한다.
+    //플레이어가 몬스터를 죽이면 플레이어가 몬스터를 얻는다.
+
 }
