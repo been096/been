@@ -20,3 +20,11 @@ C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.c
 C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.sourcelink.json
 C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.dll
 C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\refint\Programingstudy.dll
+C:\Users\PC\source\repos\been\Programingstudy\bin\Debug\net8.0\Programingstudy.exe
+C:\Users\PC\source\repos\been\Programingstudy\bin\Debug\net8.0\Programingstudy.deps.json
+C:\Users\PC\source\repos\been\Programingstudy\bin\Debug\net8.0\Programingstudy.runtimeconfig.json
+C:\Users\PC\source\repos\been\Programingstudy\bin\Debug\net8.0\Programingstudy.dll
+C:\Users\PC\source\repos\been\Programingstudy\bin\Debug\net8.0\Programingstudy.pdb
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.pdb
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\Programingstudy.genruntimeconfig.cache
+C:\Users\PC\source\repos\been\Programingstudy\obj\Debug\net8.0\ref\Programingstudy.dll

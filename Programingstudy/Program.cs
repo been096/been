@@ -19,7 +19,8 @@ namespace Practice2
             //MonsterListMain();
             //PlayerBattleMain();
             //MonsterSelectMain();
-            RPGPlayer.ClassPlayerbattleMain();
+            //RPGPlayer.ClassPlayerBattleMain();
+            RPGPlayer.SelectFieldBattleMain();
         }
 
 
