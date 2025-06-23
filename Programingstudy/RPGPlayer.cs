@@ -141,9 +141,9 @@ namespace Programingstudy
             List<Player> listMonster = new List<Player>();
 
             listMonster.Add(new Player("Slime", 5, 20, 20));
-            listMonster.Add(new Player("Skeleton", 10, 30));
-            listMonster.Add(new Player("Zombie", 20, 50));
-            listMonster.Add(new Player("Dragon", 50, 200));
+            listMonster.Add(new Player("Skeleton", 10, 30, 40, 1, 50));
+            listMonster.Add(new Player("Zombie", 20, 50, 50, 1, 70));
+            listMonster.Add(new Player("Dragon", 50, 200, 1000, 1, 2000));
             
             int nSelectIdx = -1;
 
@@ -203,17 +203,15 @@ namespace Programingstudy
         public string Name { get; set; }
         int nAtk;
         int nHP;
-        int nMaxHP;
         int nLevel;
         int nEXP;
         int nMAXEXP;
 
-        public Player(string name, int hp = 100, int atk = 10, int exp = 20, int level = 1, int mxp = 30)
+        public Player(string name, int hp = 100, int atk = 10, int exp = 0, int level = 1, int mxp = 20)
         {
             Name = name;
-            nAtk = atk;
             nHP = hp;
-            nMaxHP = hp;
+            nAtk = atk;
             nEXP = exp;
             nLevel = level;
             nMAXEXP = mxp;
@@ -236,7 +234,7 @@ namespace Programingstudy
         public void Display(string msg = "")
         {
             Console.WriteLine(msg);
-            Console.WriteLine(Name + "Atk/HP" + this.nAtk + "/" + this.nHP + "EXP:" + this.nEXP + "Lv" + this.nLevel);
+            Console.WriteLine(Name + " Atk/HP:" + this.nAtk + "/" + this.nHP + "\tMAXEXP/EXP:" + this.nMAXEXP + "/" + this.nEXP + "\tLv" + this.nLevel);
         }
 
         public void stillEXP(Player target)
@@ -247,10 +245,11 @@ namespace Programingstudy
 
         public void LevelUP()
         {
-            if (this.nEXP >= 30)
+            if (this.nEXP >= nMAXEXP)
             {
                 this.nLevel += 1;
-                this.nEXP -= 30;
+                this.nMAXEXP *= 2;
+                this.nEXP -= nEXP;
                 this.nHP += 20;
                 this.nAtk += 20;
                 Console.WriteLine("LEVEL UP!");
