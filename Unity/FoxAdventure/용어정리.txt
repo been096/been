@@ -15,9 +15,19 @@
 타일맵:
 타일맵랜더러:
 
+[스크립팅API]
+Input.GetKey: 누르는 동안 호출된다.
+Input.GetKeyDown: 누를 때 한번 호출된다.
+Input.GetKeyUP: 키를 뗄 때 한번 호출된다.
+
 [컴포넌트]
 트랜스폼: 
 카메라: ?
+Rigidbody(강체):
+
+[개념]
+Rigidbody(강체): 물리에서 힘을 받는 물체(내가 빨간펜을 던진다고 했을 때, 빨간펜이 강체가 된다)
+
 Asset: 
 Free Aspect: 
 FHD: 
