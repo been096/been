@@ -2078,7 +2078,6 @@ GameObject:
   - component: {fileID: 1630556518}
   - component: {fileID: 1630556519}
   - component: {fileID: 1630556520}
-  - component: {fileID: 1630556521}
   m_Layer: 0
   m_Name: player-idle-1
   m_TagString: Untagged
@@ -2229,18 +2228,6 @@ CircleCollider2D:
   m_Offset: {x: -0.0726372, y: -0.29054856}
   serializedVersion: 2
   m_Radius: 0.66806436
---- !u!122 &1630556521
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630556515}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4287993237
-  m_Size: 1
 --- !u!1 &1754543098
 GameObject:
   m_ObjectHideFlags: 0
