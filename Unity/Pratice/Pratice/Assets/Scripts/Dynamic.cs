@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Dynamic : MonoBehaviour
 {
     public float speed = 1;
     public float JumpPower = 100;
+    public bool IsGround;
+    public bool IsJump;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,13 @@ public class Dynamic : MonoBehaviour
             transform.position += Vector3.left * speed * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space))
-            GetComponent<Rigidbody2D>().AddForce(Vector3.up * JumpPower);
+        {
+            if (!IsJump)
+            {
+                GetComponent<Rigidbody2D>().AddForce(Vector3.up);
+                IsJump = true;
+            }
+
+        }
     }
 }
