@@ -43,15 +43,28 @@ public class Dynamic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
-        if (collision.gameObject.name == "cherry-1")
-        {
-            score++;
-            Destroy(gameObject);
-        }
         if (collision.gameObject)
             Isjump = false;
-            
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+
+    {
+        //Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
+        //if (collision.gameObject.name == "cherry")
+        //{
+        //    score++;
+        //    Destroy(collision.gameObject);
+        //    //Destroy(this.gameObject);
+        //}
+        
+        //if (collision.gameObject.name == "gem")
+        //{
+        //    score += 100;
+        //    Destroy(collision.gameObject);
+        //    //Destroy(this.gameObject);
+        //}
     }
 
 }
