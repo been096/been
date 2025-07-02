@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+//Item.cs를 새로 만들어주니 아이템에 새로운 속성을 부여하기가 굉장히 쉬워진다.
+
 public class Item : MonoBehaviour
 {
     public int score;

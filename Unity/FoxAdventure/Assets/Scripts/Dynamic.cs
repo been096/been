@@ -22,9 +22,28 @@ public class Dynamic : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
-            transform.position += Vector3.right * speed * Time.deltaTime;
+        {
+           transform.position += Vector3.right * speed * Time.deltaTime;
+            //Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+            //velocity.x = 0;
+            //GetComponent<Rigidbody2D>().velocity = velocity;
+
+            //if (Isjump = false)
+            //{
+            //    Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+            //    velocity.x = 0;
+            //    GetComponent<Rigidbody2D>().velocity = velocity;
+            //}
+
+
+        }
+           
         if (Input.GetKey(KeyCode.LeftArrow))
+        {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            //GetComponent<Rigidbody2D>().velocity = (Vector2.zero);
+        }
+            
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -34,6 +53,13 @@ public class Dynamic : MonoBehaviour
                 Isjump = true;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        //죽은 위치에서 부활함
+        //GameObject objPlayer = Instantiate(this.gameObject);
+        //objPlayer.SetActive(true);
     }
 
     private void OnGUI()
@@ -51,6 +77,8 @@ public class Dynamic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
+        
+        ///아이템이 추가될때마다 경우의 수가 늘어나고, 코드를 변경해야한다. 굉장히 귀찮음.
         //Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
         //if (collision.gameObject.name == "cherry")
         //{
