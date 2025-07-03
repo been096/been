@@ -10,6 +10,16 @@ public class Frog : MonoBehaviour
     public float jumpPower = 100;
     public bool Isjump;
 
+    public float time;
+
+    IEnumerator ProcessTimer()
+    {
+        Debug.Log("ProcessTimer() start");
+        yield return new WaitForSeconds(time);
+        Jump();
+        Debug.Log("ProcessTimer() end");
+    }
+
     void Start()
     {
         
@@ -18,13 +28,9 @@ public class Frog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        if(Isjump)
+            transform.position += Vector3.left * speed * Time.deltaTime;
 
-        if (!Isjump)
-        {
-            GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpPower);
-            Isjump = true;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,12 +39,23 @@ public class Frog : MonoBehaviour
             Isjump = false;
 
         Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
-        if (collision.gameObject.name == "player")
+        if (collision.gameObject.tag == "Player")
         {
 
 
             Destroy(collision.gameObject);
             //Destroy(this.gameObject);
+        }
+
+        StartCoroutine(ProcessTimer());
+    }
+
+    void Jump()
+    {
+        if (!Isjump)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpPower);
+            Isjump = true;
         }
     }
 }

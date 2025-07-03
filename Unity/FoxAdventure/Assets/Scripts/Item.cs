@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
 {
     public int score;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +26,9 @@ public class Item : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
-        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
-        if (collision.gameObject.name == "player")
+        
+       Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
+        if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<Dynamic>().score += this.score;
 
