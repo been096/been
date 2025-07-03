@@ -17,4 +17,16 @@ public class Opossum : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
+        if (collision.gameObject.name == "player")
+        {
+            
+
+            Destroy(collision.gameObject);
+            //Destroy(this.gameObject);
+        }
+    }
 }

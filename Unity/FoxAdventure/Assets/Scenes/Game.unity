@@ -1843,6 +1843,9 @@ GameObject:
   m_Component:
   - component: {fileID: 141370862}
   - component: {fileID: 141370861}
+  - component: {fileID: 141370863}
+  - component: {fileID: 141370865}
+  - component: {fileID: 141370864}
   m_Layer: 0
   m_Name: frog-idle-1
   m_TagString: Untagged
@@ -1911,12 +1914,107 @@ Transform:
   m_GameObject: {fileID: 141370860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.77, y: 2.08, z: 0}
+  m_LocalPosition: {x: 19.85, y: 7.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141370863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141370860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4246707979a714cb357efd56c8523c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  jumpPower: 300
+  Isjump: 0
+--- !u!50 &141370864
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141370860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &141370865
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141370860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1875, y: 2}
+    newSize: {x: 0.35, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.53125, y: 0.625}
+      - {x: -0.96875, y: 0.1875}
+      - {x: -0.96875, y: -0.6875}
+      - {x: -0.90625, y: -0.8125}
+      - {x: 0.71875, y: -0.8125}
+      - {x: 0.90625, y: -0.5}
+      - {x: 0.90625, y: 0.0625}
+      - {x: 0.34375, y: 0.625}
+  m_UseDelaunayMesh: 0
 --- !u!1 &610779318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,8 +2110,8 @@ GameObject:
   - component: {fileID: 1217147419}
   - component: {fileID: 1217147418}
   - component: {fileID: 1217147420}
-  - component: {fileID: 1217147422}
   - component: {fileID: 1217147421}
+  - component: {fileID: 1217147422}
   m_Layer: 0
   m_Name: opossum-1
   m_TagString: Untagged
@@ -2082,7 +2180,7 @@ Transform:
   m_GameObject: {fileID: 1217147417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.1, y: 7.65, z: 0}
+  m_LocalPosition: {x: 10.8, y: 3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2100,7 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d43279206097b49a71d04a66980e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
 --- !u!50 &1217147421
 Rigidbody2D:
   serializedVersion: 4
@@ -2128,8 +2226,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1217147422
-BoxCollider2D:
+--- !u!60 &1217147422
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2170,9 +2268,41 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.25, y: 1.75}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.316823, y: 0.82011914}
+      - {x: 0.3409481, y: 0.123485565}
+      - {x: 0.06478977, y: 0.21948123}
+      - {x: -0.14382744, y: 0.10602927}
+      - {x: -0.24738598, y: 0.4696679}
+      - {x: -0.38604164, y: 0.459831}
+      - {x: -0.5077944, y: 0.36409926}
+      - {x: -0.9375, y: 0.48712182}
+      - {x: -0.9049244, y: 0.254925}
+      - {x: -1.0886383, y: 0.15416741}
+      - {x: -1.0543175, y: -0.21015453}
+      - {x: -0.7627325, y: -0.31879544}
+      - {x: -0.92144775, y: -0.550997}
+      - {x: -0.8098488, y: -0.71363664}
+      - {x: -0.5030308, y: -0.55984926}
+      - {x: -0.3627615, y: -0.78082347}
+      - {x: -0.23587036, y: -0.8609791}
+      - {x: 0.013046265, y: -0.81848574}
+      - {x: 0.12045479, y: -0.6325762}
+      - {x: 0.3297205, y: -0.59392166}
+      - {x: 0.5687542, y: -0.5510442}
+      - {x: 0.7397728, y: -0.5522728}
+      - {x: 0.7327137, y: -0.41694355}
+      - {x: 0.7166109, y: -0.48801374}
+      - {x: 0.7654896, y: -0.44054914}
+      - {x: 0.6588812, y: -0.28409672}
+      - {x: 0.5620222, y: -0.22310567}
+      - {x: 0.6687918, y: -0.035455704}
+      - {x: 0.75024986, y: 0.17927957}
+      - {x: 0.78090096, y: 0.50423694}
+      - {x: 0.6428032, y: 0.55416703}
+      - {x: 0.5196972, y: 0.814394}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1754543098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2703,10 @@ PrefabInstance:
     - target: {fileID: 2308131607143755788, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256632149806053597, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
+      propertyPath: jumpPower
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6733546028135109452, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
       propertyPath: m_Name
