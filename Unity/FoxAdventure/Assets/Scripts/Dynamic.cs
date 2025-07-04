@@ -9,7 +9,6 @@ public class Dynamic : MonoBehaviour
     public int score;
     public float speed = 1; // 한번에 얼마나 이동할지 지정
     public float jumpPower = 100;
-    public bool Isground;
     public bool Isjump;
 
     // Start is called before the first frame update

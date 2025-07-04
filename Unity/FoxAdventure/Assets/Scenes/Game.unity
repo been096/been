@@ -2028,7 +2028,7 @@ GameObject:
   - component: {fileID: 610779319}
   - component: {fileID: 610779321}
   m_Layer: 0
-  m_Name: sign
+  m_Name: PlayerRespooner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2722,6 +2722,10 @@ PrefabInstance:
     - target: {fileID: 2308131607143755788, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256632149806053597, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
+      propertyPath: heart
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4256632149806053597, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
       propertyPath: jumpPower

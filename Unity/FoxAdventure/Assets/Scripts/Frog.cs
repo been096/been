@@ -12,11 +12,17 @@ public class Frog : MonoBehaviour
 
     public float time;
 
+    public bool IsTimmer;
+
     IEnumerator ProcessTimer()
     {
         Debug.Log("ProcessTimer() start");
-        yield return new WaitForSeconds(time);
-        Jump();
+        IsTimmer = true; //타이머 시작
+        
+        yield return new WaitForSeconds(time); // time에 시간동안 기다린다
+        Jump(); // 점프시작
+
+        IsTimmer = false; // 타이머 끝
         Debug.Log("ProcessTimer() end");
     }
 
