@@ -11,6 +11,10 @@ public class Dynamic : MonoBehaviour
     public float jumpPower = 100;
     public bool Isjump;
 
+    public Gun gun;
+
+    public Vector3 vDir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,7 @@ public class Dynamic : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
            transform.position += Vector3.right * speed * Time.deltaTime;
+            vDir = Vector3.right;
             //Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
             //velocity.x = 0;
             //GetComponent<Rigidbody2D>().velocity = velocity;
@@ -40,6 +45,7 @@ public class Dynamic : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            vDir = Vector3.right;
             //GetComponent<Rigidbody2D>().velocity = (Vector2.zero);
         }
             
@@ -52,6 +58,9 @@ public class Dynamic : MonoBehaviour
                 Isjump = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+            gun.Shot();
     }
 
     private void OnDestroy()
