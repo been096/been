@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307fbbe99aef68f4fb17537474d07c79, type: 3}
+  m_Script: {fileID: 11500000, guid: e680382532323b34e9b9e209eb8c181e, type: 3}
   m_Name: ItemList
   m_EditorClassIdentifier: 
   itemName: "\uB0B4 \uC544\uC774\uD15C"
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  description: "\uC544\uC774\uD15C\uC785\uB2C8\uB2E4."
+  description: "\uB0B4 \uC544\uC774\uD15C\uC785\uB2C8\uB2E4."
