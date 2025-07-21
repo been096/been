@@ -11,7 +11,7 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) == true)
+        if (Input.GetKeyDown(KeyCode.A) == true)
         {
             inventory.AddItem(testItem);
             Debug.Log("아이템 추가됨");
