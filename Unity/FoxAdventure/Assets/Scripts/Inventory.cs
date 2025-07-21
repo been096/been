@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public Transform slotParent;
     public int slotCount = 20;
     public List<Slot> slots = new List<Slot>();
+    public GameObject inventory;
 
 
     /// <summary>
@@ -22,6 +23,14 @@ public class Inventory : MonoBehaviour
             s.ClearSlot();
             slots.Add(s);
         }
+        CloseInventory();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+            inventory.SetActive(!inventory.activeSelf);
+
     }
 
 
@@ -39,5 +48,10 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void CloseInventory()
+    {
+        inventory.SetActive(false);
     }
 }

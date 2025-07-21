@@ -1268,6 +1268,7 @@ MonoBehaviour:
   slotParent: {fileID: 1574095652}
   slotCount: 20
   slots: []
+  inventory: {fileID: 1574095651}
 --- !u!1 &1216515588
 GameObject:
   m_ObjectHideFlags: 0

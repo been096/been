@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour
 {
     public Image icon; // 인벤토리의 각 슬롯에 보여줄 아이템의 아이콘 이미지.
     private ItemData currentItem; // 현재 슬롯에 저장되어있는 아이템의 정보.
+    private bool equipped = false;
 
 
 
@@ -48,7 +49,40 @@ public class Slot : MonoBehaviour
     {
         if (HasItem() == true)
         {
-            Debug.Log("아이템 사용 : " + currentItem.itemName);
+            //장착이 가능한 아이템인지 검사. 현재 장착중이면 해제, 그렇지 않으면 장착.
+            if (IsPossbleEuqip() == true)
+            {
+                if(equipped == true)
+                {
+                    Unequip();
+                }
+                else
+                {
+                    EquipItem();
+                }
+            }
+            else
+            {
+                Debug.Log("아이템 사용 : " + currentItem.itemName);
+            }
+                //Debug.Log("아이템 사용 : " + currentItem.itemName);
         }
+    }
+
+    public bool IsPossbleEuqip()
+    {
+        return currentItem.type == Itemtype.Weapon || currentItem.type == Itemtype.Armour || currentItem.type == Itemtype.Acc;
+    }
+
+    public void EquipItem()
+    {
+        Debug.Log("아이템 착용 : " + currentItem.itemName);
+        equipped = true;
+    }
+
+    public void Unequip()
+    {
+        Debug.Log("아이템 해제 : " + currentItem.itemName);
+        equipped = false;
     }
 }
