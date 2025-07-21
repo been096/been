@@ -78,11 +78,23 @@ public class Slot : MonoBehaviour
     {
         Debug.Log("아이템 착용 : " + currentItem.itemName);
         equipped = true;
+
+        PlayerStat playerStat = GameObject.FindAnyObjectByType<PlayerStat>();
+        if (playerStat != null)
+        {
+            playerStat.UpdatePlayerStat(currentItem.Attack, currentItem.Defense);
+        }
     }
 
     public void Unequip()
     {
         Debug.Log("아이템 해제 : " + currentItem.itemName);
         equipped = false;
+
+        PlayerStat playerStat = GameObject.FindAnyObjectByType<PlayerStat>();
+        if (playerStat != null)
+        {
+            playerStat.UpdatePlayerStat(-currentItem.Attack, -currentItem.Defense);
+        }
     }
 }

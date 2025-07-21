@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using UnityEngine;
 
-public enum Itemtype
+public enum Itemtype // enum -> 열거형, 데이터의 타입을 정의할 때 쓰는 것. 타입을 분류할 때 많이 쓴다.
 {
     Weapon,
     Armour,
