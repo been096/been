@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
+    public AudioSource soundClick; // 버튼이 클릭됐을 때 재생할 사운드 오브젝트.
     public Image icon; // 인벤토리의 각 슬롯에 보여줄 아이템의 아이콘 이미지.
     private ItemData currentItem; // 현재 슬롯에 저장되어있는 아이템의 정보.
     private bool equipped = false;
@@ -65,7 +66,11 @@ public class Slot : MonoBehaviour
             {
                 Debug.Log("아이템 사용 : " + currentItem.itemName);
             }
-                //Debug.Log("아이템 사용 : " + currentItem.itemName);
+        }
+
+        if(soundClick.clip != null)
+        {
+            soundClick.Play();
         }
     }
 
