@@ -18,5 +18,6 @@ public class ItemData : ScriptableObject
     public Itemtype type;
     public int Attack;
     public int Defense;
+    public int Score;
     public string description;
 }

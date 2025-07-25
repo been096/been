@@ -8,9 +8,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int score;
-    
-    
+    //public int score;
+    public ItemData ItemData;
+    //private ItemData currentItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,11 @@ public class Item : MonoBehaviour
        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
         if (collision.gameObject.tag == "Player")
         {
-            collision.GetComponent<Dynamic>().score += this.score;
+            ScoreUI playerScore = GameObject.FindAnyObjectByType<ScoreUI>();
+           
+            playerScore.UpdateScore(ItemData.Score);
+
+            // collision.GetComponent<Dynamic>().score += this.score;
 
             //Destroy(collision.gameObject);
             Destroy(this.gameObject);
