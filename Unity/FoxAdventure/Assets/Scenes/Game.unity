@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 6552557}
   m_Layer: 0
   m_Name: spikes
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9609,6 +9609,7 @@ MonoBehaviour:
   jumpPower: 7
   speed: 5
   rb: {fileID: 0}
+  heartManager: {fileID: 0}
 --- !u!50 &193220067
 Rigidbody2D:
   serializedVersion: 4
@@ -13507,7 +13508,7 @@ GameObject:
   - component: {fileID: 1937901055}
   - component: {fileID: 1937901054}
   m_Layer: 0
-  m_Name: PlayerHeart
+  m_Name: PlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13525,7 +13526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd85c79c14a53e4e8cd534a57d3cc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hearts: {fileID: 0}
+  Hearts:
+  - {fileID: 1658377714}
+  - {fileID: 1021415848}
+  - {fileID: 784134564}
+  currentHealth: 0
 --- !u!4 &1937901055
 Transform:
   m_ObjectHideFlags: 0
@@ -13971,6 +13976,10 @@ PrefabInstance:
       propertyPath: jumpPower
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4256632149806053597, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
+      propertyPath: heartManager
+      value: 
+      objectReference: {fileID: 1937901054}
     - target: {fileID: 6733546028135109452, guid: 96ee0a7aa8b08be4da22a414d1e2e9f1, type: 3}
       propertyPath: m_Name
       value: player

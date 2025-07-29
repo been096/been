@@ -16,6 +16,7 @@ public class Dynamic : MonoBehaviour
     public Rigidbody2D rb;
     bool isGrounded;
     bool CanDoubleJump;
+    public PlayerHealth heartManager;
 
     public Gun gun;
 
@@ -94,6 +95,11 @@ public class Dynamic : MonoBehaviour
         {
             isGrounded = true;
             CanDoubleJump = false;
+        }
+
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            heartManager.TakeDamage();
         }
     }
 

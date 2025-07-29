@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
     public Rigidbody2D rb;
     bool isGrounded;
     bool CanDoubleJump;
+    public PlayerHealth heartManager;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,11 @@ public class PlayerJump : MonoBehaviour
         {
             isGrounded = true;
             CanDoubleJump = false;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            heartManager.TakeDamage();
         }
     }
 
