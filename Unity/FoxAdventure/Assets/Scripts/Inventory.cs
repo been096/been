@@ -10,7 +10,6 @@ public class Inventory : MonoBehaviour
     public List<Slot> slots = new List<Slot>();
     public GameObject inventory;
 
-
     /// <summary>
     /// 정해진 개수만큼 인벤토리에 슬롯을 만든다.
     /// </summary>

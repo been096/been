@@ -16,7 +16,11 @@ public class Dynamic : MonoBehaviour
     public Rigidbody2D rb;
     bool isGrounded;
     bool CanDoubleJump;
-    public PlayerHealth heartManager;
+    public PlayerHealth heartManager; // 
+
+    public Transform groundCheck; // 발 밑 기준점 (empty 오브젝트)
+    public LayerMask groundLayer; // 특정 레이어에만 충돌.
+    public float checkDistance = 0.1f;
 
     public Gun gun;
 
@@ -33,7 +37,9 @@ public class Dynamic : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-           transform.position += Vector3.right * speed * Time.deltaTime;
+            isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
+
+            transform.position += Vector3.right * speed * Time.deltaTime;
             vDir = Vector3.right;
             //Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
             //velocity.x = 0;
