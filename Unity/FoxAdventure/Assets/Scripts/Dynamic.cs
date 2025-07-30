@@ -16,6 +16,8 @@ public class Dynamic : MonoBehaviour
     public Rigidbody2D rb;
     bool isGrounded;
     bool CanDoubleJump;
+
+    private float moveX;
     public PlayerHealth heartManager; // 
 
     public Transform groundCheck; // 발 밑 기준점 (empty 오브젝트)
@@ -37,8 +39,8 @@ public class Dynamic : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
 
+            transform.localScale = new Vector3(1, 1, 1);
             transform.position += Vector3.right * speed * Time.deltaTime;
             vDir = Vector3.right;
             //Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
@@ -57,6 +59,7 @@ public class Dynamic : MonoBehaviour
            
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            transform.localScale = new Vector3(-1, 1, 1);
             transform.position += Vector3.left * speed * Time.deltaTime;
             vDir = Vector3.right;
             //GetComponent<Rigidbody2D>().velocity = (Vector2.zero);
@@ -65,6 +68,8 @@ public class Dynamic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
+
             if (isGrounded == true)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -81,6 +86,11 @@ public class Dynamic : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X))
                 gun.Shot();
         }
+
+        //if (moveX != 0)
+        //{
+        //    FlipSprite(moveX);
+        //}
     }
 
     private void OnDestroy()
@@ -115,6 +125,17 @@ public class Dynamic : MonoBehaviour
             isGrounded = false;
     }
 
+    //private void FlipSprite(float direction)
+    //{
+    //    if (direction > 0)
+    //    {
+    //        transform.localScale = new Vector3(1, 1, 1);
+    //    }
+    //    else if (direction < 0)
+    //    {
+    //        transform.localScale = new Vector3(-1, 1, 1);
+    //    }
+    //}
 
 
 
