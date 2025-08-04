@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public int slotCount = 20;
     public List<Slot> slots = new List<Slot>();
     public GameObject inventory;
+    public ItemData testitem;
 
     /// <summary>
     /// 정해진 개수만큼 인벤토리에 슬롯을 만든다.
@@ -30,6 +31,11 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
             inventory.SetActive(!inventory.activeSelf);
 
+        if (Input.GetKeyDown(KeyCode.A) == true)
+        {
+            AddItem(testitem);
+        }
+            
     }
 
 

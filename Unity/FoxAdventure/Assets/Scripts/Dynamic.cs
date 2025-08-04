@@ -32,9 +32,6 @@ public class Dynamic : MonoBehaviour
     //-------------------------------------------------
 
     public int score;
-    //public float speed = 1; // 한번에 얼마나 이동할지 지정
-    //public float jumpPower = 100;
-    //public bool Isjump;
 
     public float jumpPower = 7.0f;
     public float speed = 5.0f;
@@ -45,9 +42,12 @@ public class Dynamic : MonoBehaviour
     private float moveX;
     public PlayerHealth heartManager; // 
 
-    public Transform groundCheck; // 발 밑 기준점 (empty 오브젝트)
+    public GameObject groundCheck; // 발 밑 기준점 (empty 오브젝트)
     public LayerMask groundLayer; // 특정 레이어에만 충돌.
     public float checkDistance = 0.1f;
+
+    public GameObject GameClear;
+
 
     public Gun gun;
 
@@ -64,11 +64,15 @@ public class Dynamic : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameClear.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
+        isGrounded = IsGrounded();
+
         if (state == AnimState.Jump)
         {
             Debug.Log(state);
@@ -123,18 +127,18 @@ public class Dynamic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
-            isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
 
-            if (isGrounded == true)
+            //if (isGrounded == true)
+            if (isGrounded)
             {
                 state = AnimState.Jump;
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                isGrounded = false;
+                //isGrounded = false;
                 CanDoubleJump = true;
             }
 
-            else if (isGrounded == false && CanDoubleJump == true)
+            //else if (isGrounded == false && CanDoubleJump == true)
+            else if (CanDoubleJump)
             {
                 state = AnimState.Jump;
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -199,7 +203,7 @@ public class Dynamic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            isGrounded = true;
+            //isGrounded = true;
             CanDoubleJump = false;
             Debug.Log(isGrounded);
             state = AnimState.Idle;
@@ -230,5 +234,12 @@ public class Dynamic : MonoBehaviour
     //}
 
 
-
+    private bool IsGrounded()
+    {
+        float rayLength = 0.25f;
+        Vector2 rayOrigin = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.1f);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
+        return hit.collider != null;
+        Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
+    }
 }
