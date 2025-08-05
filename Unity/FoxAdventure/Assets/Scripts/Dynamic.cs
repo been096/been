@@ -36,8 +36,8 @@ public class Dynamic : MonoBehaviour
     public float jumpPower = 7.0f;
     public float speed = 5.0f;
     public Rigidbody2D rb;
-    bool isGrounded;
-    bool CanDoubleJump;
+    public bool isGrounded;
+    public bool CanDoubleJump;
 
     private float moveX;
     public PlayerHealth heartManager; // 

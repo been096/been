@@ -6,7 +6,9 @@ public class Opossum : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 1.0f;
-
+    public float timer = 0.0f;
+    public float switchtime = 2.0f;
+    private float dir = 1f;
     void Start()
     {
         
@@ -15,7 +17,16 @@ public class Opossum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        timer += Time.deltaTime;
+
+        transform.Translate(Vector2.left * dir * speed * Time.deltaTime);
+
+        if(timer >= switchtime)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            dir = dir *  -1f;
+            timer = 0.0f;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

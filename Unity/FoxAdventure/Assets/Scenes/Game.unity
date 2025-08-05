@@ -18571,7 +18571,6 @@ Transform:
   - {fileID: 322766989}
   - {fileID: 1236307731}
   - {fileID: 243692308}
-  - {fileID: 963454585}
   m_Father: {fileID: 1754543100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &916447537
@@ -21205,7 +21204,7 @@ Transform:
   m_LocalScale: {x: 0.96559834, y: 1.0373673, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 916447536}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963454586
 MonoBehaviour:
@@ -21938,7 +21937,7 @@ Transform:
   m_GameObject: {fileID: 1217147417}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.52, y: -13.61, z: 0.113802254}
+  m_LocalPosition: {x: 34.74, y: -13.54, z: 0.113802254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21956,7 +21955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d43279206097b49a71d04a66980e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
+  timer: 0
+  switchtime: 2
 --- !u!50 &1217147421
 Rigidbody2D:
   serializedVersion: 4
@@ -22443,7 +22444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Game
-  GameClear: {fileID: 0}
+  GameClear: {fileID: 316139452}
 --- !u!4 &1345548373
 Transform:
   m_ObjectHideFlags: 0
@@ -22922,7 +22923,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422757183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -25183,3 +25184,4 @@ SceneRoots:
   - {fileID: 101641162}
   - {fileID: 921209657}
   - {fileID: 99301546}
+  - {fileID: 963454585}
