@@ -63,7 +63,7 @@ public class Dynamic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         GameClear.SetActive(false);
     }
 
@@ -156,6 +156,7 @@ public class Dynamic : MonoBehaviour
             PlayAnimation();
         }
 
+        Debug.Log($"isGrounded: {isGrounded}, speed: {speed}, velocity: {rb.velocity}, position: {transform.position}");
 
     }
 
@@ -212,6 +213,7 @@ public class Dynamic : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle")
         {
             heartManager.TakeDamage();
+            //state = AnimState.Die;
         }
     }
 

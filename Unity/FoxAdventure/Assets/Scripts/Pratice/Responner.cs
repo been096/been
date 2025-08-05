@@ -13,7 +13,7 @@ public class Responner : MonoBehaviour
     IEnumerator ProcessTimer()
     {
         Debug.Log("ProcessTimer() start");
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time); // 코루틴에서 yield return null;을 쓰면 for문에서나 switch case 문에서의 break;와 비슷한 의미로도 쓰인다.
         objPlayer = Instantiate(prefabPlayer, transform.position, Quaternion.identity);
         Debug.Log("ProcessTimer() end");
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Opossum : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 1;
+    public float speed = 1.0f;
 
     void Start()
     {
