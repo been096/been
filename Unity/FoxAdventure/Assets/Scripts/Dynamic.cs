@@ -44,6 +44,7 @@ public class Dynamic : MonoBehaviour
 
     public GameObject groundCheck; // 발 밑 기준점 (empty 오브젝트)
     public LayerMask groundLayer; // 특정 레이어에만 충돌.
+    public LayerMask monsterLayer;
     public float checkDistance = 0.1f;
 
     public GameObject GameClear;
@@ -63,8 +64,7 @@ public class Dynamic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
-        GameClear.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -72,6 +72,7 @@ public class Dynamic : MonoBehaviour
     {
         //isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundLayer);
         isGrounded = IsGrounded();
+        Attack();
 
         if (state == AnimState.Jump)
         {
@@ -156,7 +157,7 @@ public class Dynamic : MonoBehaviour
             PlayAnimation();
         }
 
-        Debug.Log($"isGrounded: {isGrounded}, speed: {speed}, velocity: {rb.velocity}, position: {transform.position}");
+        //Debug.Log($"isGrounded: {isGrounded}, speed: {speed}, velocity: {rb.velocity}, position: {transform.position}");
 
     }
 
@@ -210,10 +211,15 @@ public class Dynamic : MonoBehaviour
             state = AnimState.Idle;
         }
 
-        if(collision.gameObject.tag == "Obstacle")
+        if(collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Monster")
         {
             heartManager.TakeDamage();
             //state = AnimState.Die;
+        }
+
+        if (collision.gameObject.layer == monsterLayer )
+        {
+            Destroy(collision.gameObject);
         }
     }
 
@@ -241,6 +247,15 @@ public class Dynamic : MonoBehaviour
         float rayLength = 0.25f;
         Vector2 rayOrigin = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.1f);
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
+        return hit.collider != null;
+        Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
+    }
+
+    private bool Attack()
+    {
+        float rayLength = 0.25f;
+        Vector2 rayOrigin = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.1f);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, monsterLayer);
         return hit.collider != null;
         Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
     }
