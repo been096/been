@@ -26,7 +26,7 @@ public class Dynamic : MonoBehaviour
 
     private SpriteRenderer sr;
 
-    private int frame = 0;
+    private int frame = -1;
     private float timer = 0.0f;
     public float frameRate = 0.15f;
     //-------------------------------------------------
@@ -34,6 +34,7 @@ public class Dynamic : MonoBehaviour
     public int score;
 
     public float jumpPower = 7.0f;
+    //public float knockbackPower = 3.0f;
     public float speed = 5.0f;
     public Rigidbody2D rb;
     public bool isGrounded;
@@ -251,12 +252,25 @@ public class Dynamic : MonoBehaviour
         Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
     }
 
-    private bool Attack()
+    private void Attack()
     {
-        float rayLength = 0.25f;
+        float monsterrayLength = 0.25f;
         Vector2 rayOrigin = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.1f);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, monsterLayer);
-        return hit.collider != null;
-        Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, monsterrayLength, monsterLayer);
+        if(hit.collider != null)
+        {
+            if (hit.collider.tag == "Monster")
+            {
+                //Destroy(hit.collider.gameObject);
+                Opossum monster = hit.collider.GetComponent<Opossum>();
+                if(monster != null)
+                {
+                    monster.Die();
+                }
+
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            }
+        }
+        Debug.DrawRay(rayOrigin, Vector2.down * monsterrayLength, Color.red);
     }
 }

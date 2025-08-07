@@ -1,34 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class Opossum : MonoBehaviour
 {
-    //------------------애니메이션 변수-----------------------------
+    //------------------애니메이션 변수----------------------------
     public Sprite[] moveSprites;
     public Sprite[] dieSprites;
 
     private AnimState state = AnimState.Move;
 
-
-    private int frame = 0;
+    private int frame = -1;
     private float animtimer = 0.0f;
     public float frameRate = 0.15f;
-    //-------------------------------------------------------------
+    private bool isDead = false;
 
-    public PlayerHealth heartManager;
-    // Start is called before the first frame update
+    //------------------------------------------------------------
+
+    //----------------이동 변수------------------------------------
     public float speed = 1.0f;
     public float timer = 0.0f;
     public float switchtime = 2.0f;
     private float dir = 1f;
+    //------------------------------------------------------------
     private SpriteRenderer sr;
-    GameObject Death;
+    private Rigidbody2D rb;
+    public PlayerHealth heartManager;
+
+    // Start is called before the first frame update
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -53,6 +59,12 @@ public class Opossum : MonoBehaviour
             animtimer = 0.0f;
             PlayAnimation();
         }
+
+        if(isDead)
+        {
+            Die();
+        }
+        
     }
 
     void PlayAnimation()
@@ -72,7 +84,7 @@ public class Opossum : MonoBehaviour
         sr.sprite = curArr[frame]; // 프레임마다 이미지가 바뀐다.
     }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
         if (collision.gameObject.tag == "Player")
@@ -83,4 +95,32 @@ public class Opossum : MonoBehaviour
             //Destroy(this.gameObject);
         }
     }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        frame = -1;
+        animtimer = 0f;
+
+        if(rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+        }
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false; // 충돌 제거
+
+        state = AnimState.Die;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        Invoke("DestroySelf", 3.0f); // 예: 0.5초 후 삭제
+    }
+
+    void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
 }

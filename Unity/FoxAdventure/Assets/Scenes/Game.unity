@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101641162}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15702,7 +15702,7 @@ GameObject:
   - component: {fileID: 141370863}
   - component: {fileID: 141370865}
   - component: {fileID: 141370864}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: frog
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -15793,6 +15793,7 @@ MonoBehaviour:
   Isjump: 0
   time: 1
   IsTimmer: 0
+  heartManager: {fileID: 1937901054}
 --- !u!50 &141370864
 Rigidbody2D:
   serializedVersion: 4
@@ -16026,7 +16027,7 @@ Transform:
   m_GameObject: {fileID: 164860315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.007, z: 0}
+  m_LocalPosition: {x: -0.055, y: -1.032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21970,10 +21971,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 635cdc790083c4be9a6a4feb8d976afc, type: 3}
   - {fileID: 21300000, guid: f2065fb3797f1427aa8b3fc04af35e35, type: 3}
   frameRate: 0.15
-  heartManager: {fileID: 1937901054}
   speed: 3
   timer: 0
   switchtime: 2
+  heartManager: {fileID: 1937901054}
 --- !u!50 &1217147421
 Rigidbody2D:
   serializedVersion: 4
@@ -22494,7 +22495,7 @@ GameObject:
   - component: {fileID: 1356019579}
   - component: {fileID: 1356019578}
   - component: {fileID: 1356019577}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: eagle
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -22653,7 +22654,7 @@ MonoBehaviour:
   speed: 3
   Ismove: 0
   objTarget: {fileID: 0}
-  heartManager: {fileID: 0}
+  heartManager: {fileID: 1937901054}
 --- !u!1 &1372990266
 GameObject:
   m_ObjectHideFlags: 0
