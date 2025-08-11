@@ -31,8 +31,9 @@ public class Dynamic : MonoBehaviour
     public float frameRate = 0.15f;
     //-------------------------------------------------
 
-    public int score;
 
+    public AudioSource AudioSource;
+    public AudioClip jumpClip;
     public float jumpPower = 7.0f;
     //public float knockbackPower = 3.0f;
     public float speed = 5.0f;
@@ -129,7 +130,7 @@ public class Dynamic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            AudioSource.PlayOneShot(jumpClip);
             //if (isGrounded == true)
             if (isGrounded)
             {
@@ -197,10 +198,6 @@ public class Dynamic : MonoBehaviour
         //objPlayer.SetActive(true);
     }
 
-    //private void OnGUI()
-    //{
-    //    GUI.Box(new Rect(0, 0, 200, 20), "Score:" + score);
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
