@@ -14,6 +14,8 @@ public class Frog : MonoBehaviour
 
     public bool IsTimmer;
 
+    public PlayerHealth heartManager;
+
     IEnumerator ProcessTimer()
     {
         Debug.Log("ProcessTimer() start");
@@ -48,8 +50,8 @@ public class Frog : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-
-            Destroy(collision.gameObject);
+            heartManager.TakeDamage();
+            //Destroy(collision.gameObject);
             //Destroy(this.gameObject);
         }
 

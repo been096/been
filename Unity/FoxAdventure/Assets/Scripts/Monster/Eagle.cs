@@ -8,7 +8,8 @@ public class Eagle : MonoBehaviour
     public bool Ismove;
 
     public GameObject objTarget;
-    
+    public PlayerHealth heartManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +58,7 @@ public class Eagle : MonoBehaviour
     {
         Debug.Log($"{gameObject.name}.OnCollisionEnter2D{collision.gameObject}/{collision.gameObject.tag})");
         if (collision.gameObject.tag == "Player")
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            heartManager.TakeDamage();
     }
 }
