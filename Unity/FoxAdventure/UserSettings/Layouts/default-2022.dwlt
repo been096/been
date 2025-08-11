@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -359,7 +359,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Belevich/2D Casual Game UI HD/Sprite
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 92670000
     m_LastClickedID: 26514
-    m_ExpandedIDs: 00000000c8690000ca690000cc690000ce690000d0690000d2690000d4690000d6690000d8690000da690000dc690000de690000e0690000
+    m_ExpandedIDs: 0000000090690000926900009469000096690000986900009a6900009c6900009e690000a0690000a2690000a4690000a6690000a8690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -404,7 +404,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000c8690000ca690000cc690000ce690000d0690000d2690000d4690000d6690000d8690000da690000dc690000de690000e0690000
+    m_ExpandedIDs: ffffffff000000005c68000090690000926900009469000096690000986900009a6900009c690000a0690000a2690000a4690000a6690000a8690000006a0000546f0000327c0000367c00003a7c00003c7c00003e7c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -544,9 +544,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c0d6ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 44faffff
+      m_ExpandedIDs: 1afbffff00650000046500001066000076660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 33.5818, y: -1.128268, z: -0.036283955}
     speed: 2
-    m_Value: {x: 33.726257, y: -1.5655158, z: -0.030415254}
+    m_Value: {x: 33.5818, y: -1.128268, z: -0.036283955}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 13.628349
     speed: 2
-    m_Value: 13.041483
+    m_Value: 13.628349
   m_Ortho:
     m_Target: 1
     speed: 2
