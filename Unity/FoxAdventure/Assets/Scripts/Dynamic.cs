@@ -271,4 +271,5 @@ public class Dynamic : MonoBehaviour
         Debug.DrawRay(rayOrigin, Vector2.down * monsterrayLength, Color.red);
     }
     
+    
 }
