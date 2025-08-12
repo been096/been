@@ -28,6 +28,8 @@ public class Opossum : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     public PlayerHealth heartManager;
+    public AudioSource audioSource;
+    public AudioClip diesound;
 
     // Start is called before the first frame update
 
@@ -40,6 +42,17 @@ public class Opossum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            animtimer += Time.deltaTime;
+            if (animtimer >= frameRate)
+            {
+                animtimer = 0.0f;
+                PlayAnimation();
+            }
+            return; // 죽은 상태면 이동/로직 다 멈춤
+        }
+
         state = AnimState.Move;
         timer += Time.deltaTime;
         animtimer += Time.deltaTime;
@@ -60,10 +73,7 @@ public class Opossum : MonoBehaviour
             PlayAnimation();
         }
 
-        if(isDead)
-        {
-            Die();
-        }
+        
         
     }
 
@@ -112,10 +122,11 @@ public class Opossum : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false; // 충돌 제거
 
+        audioSource.PlayOneShot(diesound);
         state = AnimState.Die;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
-        Invoke("DestroySelf", 3.0f); // 예: 0.5초 후 삭제
+        Invoke("DestroySelf", 0.5f); // 예: 0.5초 후 삭제
     }
 
     void DestroySelf()

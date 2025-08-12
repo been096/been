@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
 {
     //public int score;
     public ItemData ItemData;
+    public AudioSource audioSource;
+    public AudioClip getItem;
     //private ItemData currentItem;
 
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class Item : MonoBehaviour
             // collision.GetComponent<Dynamic>().score += this.score;
 
             //Destroy(collision.gameObject);
+            audioSource.PlayOneShot(getItem);
             Destroy(this.gameObject);
         }
     }
