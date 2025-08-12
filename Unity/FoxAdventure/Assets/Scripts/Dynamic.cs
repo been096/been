@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.U2D.IK;
 
 public enum AnimState
 {
@@ -40,6 +41,7 @@ public class Dynamic : MonoBehaviour
     public Rigidbody2D rb;
     public bool isGrounded;
     public bool CanDoubleJump;
+
 
     private float moveX;
     public PlayerHealth heartManager; // 
@@ -90,7 +92,8 @@ public class Dynamic : MonoBehaviour
         {
             state = AnimState.Move;
             transform.localScale = new Vector3(1, 1, 1);
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            //transform.position += Vector3.right * speed * Time.deltaTime;
             vDir = Vector3.right;
             //Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
             //velocity.x = 0;
@@ -108,12 +111,12 @@ public class Dynamic : MonoBehaviour
             }
 
         }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             state = AnimState.Move;
             transform.localScale = new Vector3(-1, 1, 1);
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            //transform.position += Vector3.left * speed * Time.deltaTime;
             vDir = Vector3.right;
             //GetComponent<Rigidbody2D>().velocity = (Vector2.zero);
 
@@ -121,6 +124,10 @@ public class Dynamic : MonoBehaviour
             {
                 state = AnimState.Jump;
             }
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
         if ((Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)) && state == AnimState.Move)
@@ -163,7 +170,7 @@ public class Dynamic : MonoBehaviour
 
     }
 
-   //플레이어 동작 애니메이션의 구현 함수
+    //플레이어 동작 애니메이션의 구현 함수
     void PlayAnimation()
     {
         Sprite[] curArr = idleSprites;
