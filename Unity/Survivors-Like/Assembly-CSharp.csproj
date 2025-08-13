@@ -56,19 +56,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="C:\Users\Administrator\source\repos\been096\been\Unity\Survivors-Like\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\unityplastic.dll" />
-    <Analyzer Include="C:\Users\Administrator\source\repos\been096\been\Unity\Survivors-Like\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll" />
-    <Analyzer Include="C:\Users\Administrator\source\repos\been096\been\Unity\Survivors-Like\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\log4netPlastic.dll" />
-    <Analyzer Include="C:\Users\Administrator\source\repos\been096\been\Unity\Survivors-Like\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Combat\AutoAttackContorller.cs" />
     <Compile Include="Assets\Scripts\Data\WeaponDefinitionSO.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponMount.cs" />
+    <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerCore.cs" />
     <Compile Include="Assets\Scripts\Data\CharacterStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Combat\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyCore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1019,12 +1019,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
