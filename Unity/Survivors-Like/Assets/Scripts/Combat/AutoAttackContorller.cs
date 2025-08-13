@@ -84,7 +84,7 @@ public class AutoAttackContorller : MonoBehaviour
 
         foreach(var col in hits) // OverlapCircleAll로 가져온 모든 적 정보만큼 돌겠다는 의미
         {
-            var damageable = col.GetComponent<IDamageable>();
+            var damageable = col.GetComponent<IDamageable>(); // 클래스의 다형성에 대해 알아보자.
             if(damageable == null || damageable.IsAlive == false)
             {
                 continue;
