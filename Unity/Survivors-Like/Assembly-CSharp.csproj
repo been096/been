@@ -60,15 +60,22 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
     <Compile Include="Assets\Scripts\Combat\AutoAttackContorller.cs" />
+    <Compile Include="Assets\Scripts\Combat\DamageFlash.cs" />
     <Compile Include="Assets\Scripts\Data\WeaponDefinitionSO.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponMount.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
+    <Compile Include="Assets\Scripts\Combat\CameraShake2D.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerCore.cs" />
+    <Compile Include="Assets\Scripts\PoolManager.cs" />
+    <Compile Include="Assets\Scripts\AutoRelease.cs" />
+    <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
     <Compile Include="Assets\Scripts\Data\CharacterStatsSO.cs" />
     <Compile Include="Assets\Scripts\Combat\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyCore.cs" />
+    <Compile Include="Assets\Scripts\Combat\KnockbackReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    public int maxHP = 30;
+    public int maxHP = 100;
     public int currentHP;
 
     public Action<int, int> OnHPChanged;
+    public Action<int, Vector3> OnDamaged;
     public Action OnDied;
 
     public bool IsAlive => currentHP > 0; // currentHP가 0보다 크면 true 값이 대입되고, 0보다 작으면 false 값이 대입된다.
@@ -48,7 +49,10 @@ public class Health : MonoBehaviour, IDamageable
             OnHPChanged.Invoke(currentHP, maxHP);
         }
         
-        //OnHPChanged.Invoke(currentHP, maxHP);
+        if(OnDamaged != null)
+        {
+            OnDamaged.Invoke(amount, hitPoint);
+        }
 
         if(currentHP <= 0)
         {
