@@ -12,6 +12,7 @@ public class AutoAttackContorller : MonoBehaviour
     public LayerMask targetLayers; // 적 레이어를 타겟팅하기 위해.
 
     private float attackTimer;
+    private float attackSpeedMultiplier = 1.0f;
 
     private void Reset()
     {
@@ -40,7 +41,9 @@ public class AutoAttackContorller : MonoBehaviour
     {
         if(weaponMount != null && weaponMount.weapon != null)
         {
-            return Mathf.Max(0.05f, weaponMount.weapon.attackInterval);
+            float baseInterval = Mathf.Max(0.05f, weaponMount.weapon.attackInterval);
+            float speedMul = Mathf.Max(0.1f, attackSpeedMultiplier);
+            return baseInterval / speedMul;
         }
 
         return 0.0f;
@@ -109,5 +112,11 @@ public class AutoAttackContorller : MonoBehaviour
         }
 
         return 1;
+    }
+
+    public void AddAttackSpeedMultiplier(float addPercent)
+    {
+        float m = 1.0f + Mathf.Max(-0.9f, addPercent / 100.0f);
+        attackSpeedMultiplier *= m;
     }
 }
