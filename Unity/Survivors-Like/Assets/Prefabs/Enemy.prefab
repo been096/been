@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5529036850674859012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102542847403891554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 5694280502171554465}
   - component: {fileID: 5588476236347626977}
   - component: {fileID: 6440654620572211095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2954981042564637395}
   - component: {fileID: 6330691720208133063}
   - component: {fileID: 4982468888385481155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: -1204667207891555832}
   - component: {fileID: 8844085954414580317}
   - component: {fileID: 6619819510157351035}
+  - component: {fileID: -1299411562397885767}
   - component: {fileID: 1612034765295270146}
   m_Layer: 6
   m_Name: Enemy
@@ -486,6 +487,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damping: 12
   maxSpeed: 12
+--- !u!114 &-1299411562397885767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465994dd9390a904bbbe0d4fd4604446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardxp: 5
+  playerxp: {fileID: 0}
+  health: {fileID: 38685714759743049}
 --- !u!114 &1612034765295270146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHealth: {fileID: 38685714759743049}
   fillImage: {fileID: 0}
-  slider: {fileID: 8155093110419792641}
+  slider: {fileID: 0}
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672021429649755704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +564,7 @@ GameObject:
   - component: {fileID: 9039608451666552550}
   - component: {fileID: 2489419983284460411}
   - component: {fileID: 7810760574084152615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -623,7 +639,7 @@ GameObject:
   - component: {fileID: 2396662102857600812}
   - component: {fileID: 8155093110419792641}
   - component: {fileID: 4612675183649761824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +743,7 @@ GameObject:
   - component: {fileID: 3510031626770577974}
   - component: {fileID: 1983628922619077593}
   - component: {fileID: 6001158500718604233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
