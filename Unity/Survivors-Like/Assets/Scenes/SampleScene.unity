@@ -1169,6 +1169,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
@@ -1416,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3465594780630927844, guid: d26104f97f427174aa47a89f19e15c46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 3465594780630927844, guid: d26104f97f427174aa47a89f19e15c46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1715,7 +1719,7 @@ Transform:
   m_GameObject: {fileID: 1185980408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.2, y: 23.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1729,6 +1733,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
@@ -2312,6 +2320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (7)
@@ -2523,6 +2535,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -2584,6 +2600,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (5)
@@ -2797,7 +2817,7 @@ Transform:
   m_GameObject: {fileID: 1571006930}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2194086, y: -0.54972583, z: 0.031628907}
+  m_LocalPosition: {x: -1.2194086, y: 24.7, z: 0.031628907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2982,6 +3002,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (6)
@@ -3239,6 +3263,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (8)
@@ -3645,7 +3673,7 @@ Transform:
   m_GameObject: {fileID: 1840610911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -37.1, y: 43.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3960,6 +3988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -4174,6 +4206,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1299411562397885767, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+      propertyPath: playerxp
+      value: 
+      objectReference: {fileID: 1395331926}
     - target: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
