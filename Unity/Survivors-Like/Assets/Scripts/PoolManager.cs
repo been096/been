@@ -19,7 +19,7 @@ public class PoolManager : MonoBehaviour
         Instance = this;
     }
     
-    public GameObject spawn(GameObject prefab, Vector3 pos, Quaternion rot, Transform parent = null)
+    public GameObject Spawn(GameObject prefab, Vector3 pos, Quaternion rot, Transform parent = null)
     {
         if(prefab == null)
         {

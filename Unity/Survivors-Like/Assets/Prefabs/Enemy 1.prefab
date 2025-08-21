@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 6327442621238644505}
   - component: {fileID: 1787915579423662920}
   - component: {fileID: 880334947267388704}
-  - component: {fileID: 2587551539446017760}
+  - component: {fileID: 5156732095863457158}
   - component: {fileID: 38685714759743049}
   - component: {fileID: 7978714044052356084}
   - component: {fileID: -1204667207891555832}
@@ -264,9 +264,9 @@ GameObject:
   - component: {fileID: 6619819510157351035}
   - component: {fileID: -1299411562397885767}
   - component: {fileID: 1612034765295270146}
-  - component: {fileID: -758229951218492768}
+  - component: {fileID: 6748878208885241091}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -367,8 +367,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &2587551539446017760
-PolygonCollider2D:
+--- !u!58 &5156732095863457158
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -400,21 +400,8 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &38685714759743049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +505,7 @@ MonoBehaviour:
   targetHealth: {fileID: 38685714759743049}
   fillImage: {fileID: 0}
   slider: {fileID: 8155093110419792641}
---- !u!114 &-758229951218492768
+--- !u!114 &6748878208885241091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

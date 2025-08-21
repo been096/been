@@ -5,7 +5,7 @@ using UnityEngine.Analytics;
 
 [CreateAssetMenu(menuName = "Game/Upgrade/Catalog", fileName = "UpgradeCatalog")]
 
-public class UpgreadCatalogSO : ScriptableObject
+public class UpgradeCatalogSO : ScriptableObject
 {
     public UpgradeDefinitionSO[] all;
 

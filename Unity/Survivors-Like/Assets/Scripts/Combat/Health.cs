@@ -17,15 +17,15 @@ public class Health : MonoBehaviour, IDamageable
     void Awake()
     {
         currentHP = maxHP; // Mathf.clamp -> 최솟값과 최댓값 사이를 비교한다.
-        if(OnHPChanged != null) // 이벤트 함수가 등록이 되어 있으면.
-        {
-            OnHPChanged.Invoke(currentHP, maxHP);
-        }
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(OnHPChanged != null) // 이벤트 함수가 등록이 되어 있으면.
+        {
+            OnHPChanged.Invoke(currentHP, maxHP);
+        }
     }
 
     // Update is called once per frame
