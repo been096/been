@@ -7,11 +7,12 @@ public class EnemyXpReward : MonoBehaviour
     public int rewardxp = 5;
     public XpSystem playerxp;
     public Health health;
+    public GameObject xpPrefab;
 
     private void OnEnable()
     {
         health.OnDied += HandleDied;
-        playerxp = FindAnyObjectByType<XpSystem>();
+        //playerxp = FindAnyObjectByType<XpSystem>();
     }
 
     private void OnDisable()
@@ -21,6 +22,7 @@ public class EnemyXpReward : MonoBehaviour
 
     private void HandleDied()
     {
-        playerxp?.AddExp(rewardxp);
+        //playerxp?.AddExp(rewardxp);
+        GameObject xpOrb = Instantiate(xpPrefab, transform.position, Quaternion.identity);
     }
 }

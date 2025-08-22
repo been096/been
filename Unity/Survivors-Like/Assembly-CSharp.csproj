@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
+    <Compile Include="Assets\Scripts\Combat\XpCapsule.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Core\XpSystem.cs" />
   </ItemGroup>

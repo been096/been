@@ -490,6 +490,8 @@ MonoBehaviour:
   rewardxp: 5
   playerxp: {fileID: 0}
   health: {fileID: 38685714759743049}
+  xp: {fileID: 0}
+  xpPrefab: {fileID: 3209518719183089464, guid: 8655c83aba5c4df4d92431f0105c02c8, type: 3}
 --- !u!114 &1612034765295270146
 MonoBehaviour:
   m_ObjectHideFlags: 0
