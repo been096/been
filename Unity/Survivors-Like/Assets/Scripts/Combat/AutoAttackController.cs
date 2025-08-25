@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class AutoAttackContorller : MonoBehaviour
+public class AutoAttackController : MonoBehaviour
 {
     public WeaponMount weaponMount;
     public Transform attackOrigin; // 공격의 기준점.

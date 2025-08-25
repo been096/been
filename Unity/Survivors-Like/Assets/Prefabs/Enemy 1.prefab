@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: -1299411562397885767}
   - component: {fileID: 1612034765295270146}
   - component: {fileID: 6748878208885241091}
+  - component: {fileID: -662563089996043210}
   m_Layer: 6
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -490,7 +491,6 @@ MonoBehaviour:
   rewardxp: 5
   playerxp: {fileID: 0}
   health: {fileID: 38685714759743049}
-  xp: {fileID: 0}
   xpPrefab: {fileID: 3209518719183089464, guid: 8655c83aba5c4df4d92431f0105c02c8, type: 3}
 --- !u!114 &1612034765295270146
 MonoBehaviour:
@@ -520,6 +520,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+--- !u!114 &-662563089996043210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcd63f1182f3774ba48d9d093f0c841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 8386124453626044372, guid: 21acccc8b52670645bad4e2f1781af84, type: 3}
+  minCount: 1
+  maxCount: 2
+  goldPerCoin: 1
+  spreadRadius: 0.4
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0

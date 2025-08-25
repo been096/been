@@ -69,4 +69,15 @@ public class Health : MonoBehaviour, IDamageable
 
         Destroy(gameObject);
     }
+
+    public void Heal(int amount)
+    {
+        if(amount <= 0 || IsAlive)
+        {
+            return;
+        }
+
+        currentHP = Mathf.Min(currentHP + amount, maxHP);
+        OnHPChanged?.Invoke(currentHP, maxHP); // 3일차 UI바인더가 이 이벤트를 듣고있음.
+    }
 }

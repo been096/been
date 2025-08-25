@@ -8,7 +8,7 @@ using UnityEngine;
 public class UpgradeApplier : MonoBehaviour
 {
     public PlayerCore player;
-    public AutoAttackContorller autoAttack;
+    public AutoAttackController autoAttack;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class UpgradeApplier : MonoBehaviour
 
         if (autoAttack == null)
         {
-            autoAttack = FindAnyObjectByType<AutoAttackContorller>();
+            autoAttack = FindAnyObjectByType<AutoAttackController>();
         }
     }
 

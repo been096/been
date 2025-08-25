@@ -62,14 +62,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\UpgradeApplier.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\Scripts\Combat\AutoAttackContorller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Combat\DamageFlash.cs" />
     <Compile Include="Assets\Scripts\Data\UpgradeDefinitionSO.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Scripts\Combat\AutoAttackController.cs" />
     <Compile Include="Assets\Scripts\Combat\CameraShake2D.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
@@ -119,12 +121,15 @@
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyCore.cs" />
     <Compile Include="Assets\Scripts\Tool\TestXpGiver.cs" />
+    <Compile Include="Assets\Scripts\Item\GoldSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\GoldUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Combat\KnockbackReceiver.cs" />
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
     <Compile Include="Assets\Scripts\Combat\XpCapsule.cs" />
+    <Compile Include="Assets\Scripts\Item\GoldOrb.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Core\XpSystem.cs" />
   </ItemGroup>
