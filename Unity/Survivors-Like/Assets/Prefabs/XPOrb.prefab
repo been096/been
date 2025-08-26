@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: -1290938470933808545}
   - component: {fileID: 7530549701858686753}
   - component: {fileID: -6629511516824722874}
+  - component: {fileID: 7720562785249720820}
   m_Layer: 0
-  m_Name: XPcapsule
+  m_Name: XPOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3209518719183089464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ece1ee23402309b47a33855e23c9e7cf, type: 3}
   m_Name: 
@@ -165,3 +166,18 @@ MonoBehaviour:
   moveSpeed: 5
   rewardxp: 5
   playerxp: {fileID: 0}
+--- !u!114 &7720562785249720820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209518719183089464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa5dffe345076d488ebbb97648b933b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpValue: 3
+  moveSpeed: 6
+  catchDistance: 0.25

@@ -12,49 +12,49 @@ public class Health : MonoBehaviour, IDamageable
     public Action<int, Vector3> OnDamaged;
     public Action OnDied;
 
-    public bool IsAlive => currentHP > 0; // currentHP가 0보다 크면 true 값이 대입되고, 0보다 작으면 false 값이 대입된다.
+    public bool IsAlive => currentHP > 0;
 
     void Awake()
     {
-        currentHP = maxHP; // Mathf.clamp -> 최솟값과 최댓값 사이를 비교한다.
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(OnHPChanged != null) // 이벤트 함수가 등록이 되어 있으면.
+        currentHP = maxHP;
+        if (OnHPChanged != null) // 이벤트 함수가 등록이 되어 있으면.
         {
             OnHPChanged.Invoke(currentHP, maxHP);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
-        if(amount <= 0 || IsAlive == false)
+        if (amount <= 0 || IsAlive == false)
         {
             return;
         }
 
-        currentHP = Mathf.Max(currentHP - amount, 0); // 인자가 2개여서 2개 중에 큰 값을 대입시킨다. 최대값을 0으로 고정시켜 currentHP에서 amount(데미지)를 받았을 때에 음수가 되지 않고 0으로 고정시킨다.
-        Debug.Log("공격받음!!!!");
-
-        if(OnHPChanged != null)
+        currentHP = Mathf.Max(currentHP - amount, 0);
+        Debug.Log("공격 받음!!!!!");
+        if (OnHPChanged != null)
         {
             OnHPChanged.Invoke(currentHP, maxHP);
         }
-        
-        if(OnDamaged != null)
+
+        if (OnDamaged != null)
         {
             OnDamaged.Invoke(amount, hitPoint);
         }
 
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             Die();
         }
@@ -62,9 +62,15 @@ public class Health : MonoBehaviour, IDamageable
 
     void Die()
     {
-        if(OnDied != null)
+        if (OnDied != null)
         {
             OnDied.Invoke();
+        }
+
+        EnemyDropper enemyDropper = GetComponent<EnemyDropper>();
+        if (enemyDropper != null)
+        {
+            enemyDropper.CreateOrb();
         }
 
         Destroy(gameObject);
@@ -72,12 +78,52 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Heal(int amount)
     {
-        if(amount <= 0 || IsAlive)
+        if (amount <= 0 || !IsAlive)
         {
             return;
         }
 
         currentHP = Mathf.Min(currentHP + amount, maxHP);
-        OnHPChanged?.Invoke(currentHP, maxHP); // 3일차 UI바인더가 이 이벤트를 듣고있음.
+        OnHPChanged?.Invoke(currentHP, maxHP); // 3일차 UI바인더가 이 이벤트를 듣고 있음
     }
+
+    // Health.cs 내부에 아래 함수 하나 추가
+    public void MultiplyMaxHpPercent(float percent)
+    {
+        // percent가 60이면 최댓값을 1.6배로 만든다.
+        float mul = 1f + (percent / 100f);
+        if (mul < 0.1f)
+        {
+            mul = 0.1f;
+        }
+
+        int oldMax = maxHP;
+        int newMax = Mathf.RoundToInt(oldMax * mul);
+        if (newMax < 1)
+        {
+            newMax = 1;
+        }
+
+        int delta = newMax - oldMax;
+        maxHP = newMax;
+
+        // 현재 HP도 같은 비율로 늘려서 "강화 느낌"을 준다.
+        int newCurrent = Mathf.RoundToInt(currentHP * mul);
+        if (newCurrent > maxHP)
+        {
+            newCurrent = maxHP;
+        }
+        if (newCurrent < 1)
+        {
+            newCurrent = 1;
+        }
+        currentHP = newCurrent;
+
+        // UI 갱신
+        if (OnHPChanged != null)
+        {
+            OnHPChanged(currentHP, maxHP);
+        }
+    }
+
 }

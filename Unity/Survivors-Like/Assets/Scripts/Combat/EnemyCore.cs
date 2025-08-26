@@ -4,11 +4,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Health))]
-//리콰이어컴포넌트를 쓰면 해당 클래스를 쓸 때에 이 컴포넌트가 필요하다 오브젝트에 해당 스크립트를 붙여넣으면 자동으로 컴포넌트가 추가된다.
-
 public class EnemyCore : MonoBehaviour
 {
     public float moveSpeed = 2.0f;
+    public float externalSpeedMultiplier = 1f;
+
     private Transform target;
 
     private Rigidbody2D rb;
@@ -23,7 +23,7 @@ public class EnemyCore : MonoBehaviour
     private void OnEnable()
     {
         PlayerCore player = FindObjectOfType<PlayerCore>();
-        if(player != null)
+        if (player != null)
         {
             SetTarget(player.transform);
         }
@@ -49,12 +49,24 @@ public class EnemyCore : MonoBehaviour
             return;
         }
 
-        Vector2 dir = (target.position - transform.position).normalized; // 벡터의 정규화 : 벡터의 크기를 1로 만들어줌. 벡터의 크기(힘)을 제거하고 방향정보만 필요할 때 사용
-        rb.velocity = dir * moveSpeed;
+        Vector2 dir = (target.position - transform.position).normalized;    // 벡터의 정규화 : 벡터의 크기를 1로 만들어줌. 방향정보만 필요할 때 사용.
+        //rb.velocity = dir * moveSpeed;
+        float speed = moveSpeed * externalSpeedMultiplier;
+        rb.velocity = dir * speed;
     }
 
     public void SetTarget(Transform t)
     {
         target = t;
+    }
+
+    public void AddSpeedMultiplierPercent(float percent)
+    {
+        float m = 1f + (percent / 100f);
+        if (m < 0.1f)
+        {
+            m = 0.1f;
+        }
+        externalSpeedMultiplier = externalSpeedMultiplier * m;
     }
 }

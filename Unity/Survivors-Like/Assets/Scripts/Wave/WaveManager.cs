@@ -1,54 +1,68 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// ì¼ì • ì£¼ê¸°ë§ˆë‹¤ ì •í•´ì§„ ìŠ¤í° í¬ì¸íŠ¸ ì¤‘ ëœë¤í•œ ìœ„ì¹˜ì— ëª¬ìŠ¤í„°ë¥¼ ìƒì„±ì‹œí‚¨ë‹¤.
+/// ìƒì„± í›„ ë³€ê²½ëœ ì •ë³´ë¥¼ UIì— ê°±ì‹ .
+/// </summary>
 public class WaveManager : MonoBehaviour
 {
     [Header("Spawn Points")]
-    public Transform[] spawnPoints;          // ÀûÀÌ ³ª¿Ã À§Ä¡µé
+    public Transform[] spawnPoints;          // ì ì´ ë‚˜ì˜¬ ìœ„ì¹˜ë“¤
 
     [Header("Enemies")]
-    public GameObject[] enemyPrefabs;        // µîÀå½ÃÅ³ Àû Á¾·ù(1°³¸¸ ÀÖ¾îµµ µÊ)
-    public int[] enemyWeights;               // °¡ÁßÄ¡(ÀûÀÌ 2Á¾ ÀÌ»óÀÏ ¶§¸¸ »ç¿ë, ±æÀÌ´Â enemyPrefabs¿Í µ¿ÀÏ)
+    public GameObject[] enemyPrefabs;        // ë“±ì¥ì‹œí‚¬ ì  ì¢…ë¥˜(1ê°œë§Œ ìˆì–´ë„ ë¨)
+    public int[] enemyWeights;               // ê°€ì¤‘ì¹˜(ì ì´ 2ì¢… ì´ìƒì¼ ë•Œë§Œ ì‚¬ìš©, ê¸¸ì´ëŠ” enemyPrefabsì™€ ë™ì¼)
 
     [Header("Spawn Rules")]
-    public float spawnInterval = 3f;         // Ã³À½ ½ºÆù °£°İ(ÃÊ)
-    public float minSpawnInterval = 0.7f;    // ¾Æ¹«¸® »¡¶óµµ ÀÌ °ª ¾Æ·¡·Î´Â ¾È ³»·Á°¨
-    public int spawnCountPerBatch = 1;       // ÇÑ ¹ø¿¡ »Ì´Â ¸¶¸® ¼ö(Ã³À½ 1)
-    public int maxAlive = 30;                // µ¿½Ã¿¡ »ì¾ÆÀÖ´Â ÀûÀÇ »óÇÑ
+    public float spawnInterval = 3f;         // ì²˜ìŒ ìŠ¤í° ê°„ê²©(ì´ˆ)
+    public float minSpawnInterval = 0.7f;    // ì•„ë¬´ë¦¬ ë¹¨ë¼ë„ ì´ ê°’ ì•„ë˜ë¡œëŠ” ì•ˆ ë‚´ë ¤ê°
+    public int spawnCountPerBatch = 1;       // í•œ ë²ˆì— ë½‘ëŠ” ë§ˆë¦¬ ìˆ˜(ì²˜ìŒ 1)
+    public int maxAlive = 30;                // ë™ì‹œì— ì‚´ì•„ìˆëŠ” ì ì˜ ìƒí•œ
 
     [Header("Difficulty")]
-    public float difficultyStepSeconds = 20f;// ÀÌ ½Ã°£¸¶´Ù ³­ÀÌµµ »ó½Â
-    public float intervalStepDelta = 0.2f;   // ³­ÀÌµµ »ó½Â ½Ã °£°İÀÌ ÁÙ¾îµå´Â ¾ç
-    public int batchStepEveryN = 2;        // ³­ÀÌµµ N¹ø ¿Ã¸± ¶§¸¶´Ù ÇÑ ¹ø¿¡ »Ì´Â ¼ö +1
+    public float difficultyStepSeconds = 20f;// ì´ ì‹œê°„ë§ˆë‹¤ ë‚œì´ë„ ìƒìŠ¹
+    public float intervalStepDelta = 0.2f;   // ë‚œì´ë„ ìƒìŠ¹ ì‹œ ê°„ê²©ì´ ì¤„ì–´ë“œëŠ” ì–‘
+    public int batchStepEveryN = 2;        // ë‚œì´ë„ Në²ˆ ì˜¬ë¦´ ë•Œë§ˆë‹¤ í•œ ë²ˆì— ë½‘ëŠ” ìˆ˜ +1
+
+    [Header("Difficulty / Boss")]
+    public DifficultyDirector difficulty;
+    public GameObject bossPrefab;
+    public Transform bossSpawnPoint;
 
     [Header("References (Optional)")]
-    public Transform enemiesParent;          // ÀûµéÀ» ÀÌ ¹ØÀ¸·Î Á¤¸®(¾ø¾îµµ µ¿ÀÛ)
+    public Transform enemiesParent;          // ì ë“¤ì„ ì´ ë°‘ìœ¼ë¡œ ì •ë¦¬(ì—†ì–´ë„ ë™ì‘)
 
     [Header("HUD (Optional)")]
-    public TextMeshProUGUI waveText;     // "Wave 3" °°Àº Ç¥½Ã
-    public TextMeshProUGUI timerText;    // "Next: 1.2s" °°Àº Ç¥½Ã
-    public TextMeshProUGUI aliveText;    // "Alive: 12/30" °°Àº Ç¥½Ã
+    public TextMeshProUGUI waveText;     // "Wave 3" ê°™ì€ í‘œì‹œ
+    public TextMeshProUGUI timerText;    // "Next: 1.2s" ê°™ì€ í‘œì‹œ
+    public TextMeshProUGUI aliveText;    // "Alive: 12/30" ê°™ì€ í‘œì‹œ
 
-    // ³»ºÎ »óÅÂ(½¬¿î ÇÊµå¸¸ ¾¸)
+    [Header("Public Read")]
+    public int publicWaveNumber = 1; // ì™¸ë¶€ì—ì„œ ì½ë„ë¡ ê³µê°œ
+
+    // ë‚´ë¶€ ìƒíƒœ(ì‰¬ìš´ í•„ë“œë§Œ ì”€)
     private float nextSpawnTimer = 0f;
     private float elapsed = 0f;
     private int difficultyStepCount = 0;
     private int alive = 0;
-    private int waveNumber = 1;            // ½ºÆùÀÌ ÇÑ¹ø ¹ß»ıÇÒ ¶§¸¶´Ù +1 ÇÏ·Á°í »ç¿ë
+    private int waveNumber = 1;            // ìŠ¤í°ì´ í•œë²ˆ ë°œìƒí•  ë•Œë§ˆë‹¤ +1 í•˜ë ¤ê³  ì‚¬ìš©
+
+    private bool bossSpawnedThisWave = false;
 
     void Start()
     {
-        // Å¸ÀÌ¸Ó¸¦ Ã³À½ °£°İÀ¸·Î Ã¤¿î´Ù
+        // íƒ€ì´ë¨¸ë¥¼ ì²˜ìŒ ê°„ê²©ìœ¼ë¡œ ì±„ìš´ë‹¤
         nextSpawnTimer = spawnInterval;
 
-        // °¡ÁßÄ¡ ¹è¿­ÀÌ ºñ¾ú°Å³ª ±æÀÌ°¡ ¸ÂÁö ¾ÊÀ¸¸é, ±Õµî È®·ü·Î Ãë±Ş
+        // ê°€ì¤‘ì¹˜ ë°°ì—´ì´ ë¹„ì—ˆê±°ë‚˜ ê¸¸ì´ê°€ ë§ì§€ ì•Šìœ¼ë©´, ê· ë“± í™•ë¥ ë¡œ ì·¨ê¸‰
         if (enemyWeights == null || enemyWeights.Length != enemyPrefabs.Length)
         {
             enemyWeights = new int[enemyPrefabs.Length];
             int i = 0;
             while (i < enemyWeights.Length)
             {
-                enemyWeights[i] = 1; // ÀüºÎ 1·Î(±Õµî)
+                enemyWeights[i] = 1; // ì „ë¶€ 1ë¡œ(ê· ë“±)
                 i++;
             }
         }
@@ -56,24 +70,24 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        // ½Ã°£ Èê¸®±â
+        // ì‹œê°„ í˜ë¦¬ê¸°
         float dt = Time.deltaTime;
         elapsed += dt;
         nextSpawnTimer -= dt;
 
-        // HUD °»½Å(¿É¼Ç) ? º¹ÀâÇÑ ÀÌº¥Æ® ¾È ¾²°í ±×³É ¸Å ÇÁ·¹ÀÓ °ª °»½Å
+        // HUD ê°±ì‹ (ì˜µì…˜) â€” ë³µì¡í•œ ì´ë²¤íŠ¸ ì•ˆ ì“°ê³  ê·¸ëƒ¥ ë§¤ í”„ë ˆì„ ê°’ ê°±ì‹ 
         UpdateHud();
 
-        // ³­ÀÌµµ »ó½Â Ã¼Å©
+        // ë‚œì´ë„ ìƒìŠ¹ ì²´í¬
         if (elapsed >= difficultyStepSeconds * (difficultyStepCount + 1))
         {
             difficultyStepCount = difficultyStepCount + 1;
 
-            // °£°İ ÁÙÀÌ±â(¹Ù´Ú°ª À¯Áö)
+            // ê°„ê²© ì¤„ì´ê¸°(ë°”ë‹¥ê°’ ìœ ì§€)
             spawnInterval = spawnInterval - intervalStepDelta;
             if (spawnInterval < minSpawnInterval) spawnInterval = minSpawnInterval;
 
-            // ¸î ¹ø¿¡ ÇÑ ¹ø¾¿ ¹øµé Å©±â +1
+            // ëª‡ ë²ˆì— í•œ ë²ˆì”© ë²ˆë“¤ í¬ê¸° +1
             if (batchStepEveryN > 0)
             {
                 if (difficultyStepCount % batchStepEveryN == 0)
@@ -83,22 +97,43 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        // ½ºÆù Å¸ÀÌ¹Ö µµÂø
+        //==========================================================
+
+        if (difficulty != null)
+        {
+            if (difficulty.IsBossWave(publicWaveNumber) == true)
+            {
+                bool spawned = SpawnBossOnceThisWave();
+                if (spawned == true)
+                {
+                    // ë³´ìŠ¤ë¥¼ ìŠ¤í°í•œ í”„ë ˆì„ì—ëŠ” ì¼ë°˜ ìŠ¤í°ì€ ê±´ë„ˆë›´ë‹¤.
+                    nextSpawnTimer = spawnInterval;
+                    return;
+                }
+            }
+        }
+
+        //==========================================================
+
+        // ìŠ¤í° íƒ€ì´ë° ë„ì°©
         if (nextSpawnTimer <= 0f)
         {
             TrySpawnBatch();
-            nextSpawnTimer = spawnInterval; // Å¸ÀÌ¸Ó ¸®¼Â
-            waveNumber = waveNumber + 1;    // "¿şÀÌºê" ´À³¦¿ë Ä«¿îÅÍ
+            nextSpawnTimer = spawnInterval; // íƒ€ì´ë¨¸ ë¦¬ì…‹
+            waveNumber = waveNumber + 1;    // "ì›¨ì´ë¸Œ" ëŠë‚Œìš© ì¹´ìš´í„°
+            //publicWaveNumber = waveNumber; // ì™¸ë¶€ ê³µê°œê°’ë„ ë™ê¸°í™”
+            publicWaveNumber = waveNumber;   // ì™¸ë¶€/ë³´ìŠ¤íŒì •ì—ì„œ ì“°ëŠ” ì›¨ì´ë¸Œ ê°’
+            bossSpawnedThisWave = false;     // ì´ë²ˆ ì›¨ì´ë¸Œì—” ì•„ì§ ë³´ìŠ¤ë¥¼ ì•ˆ ë½‘ì•˜ìŒ
         }
     }
 
     void TrySpawnBatch()
     {
-        // ¿©À¯°¡ ¾øÀ¸¸é ¾Æ¹«°Íµµ ¾È ÇÔ
+        // ì—¬ìœ ê°€ ì—†ìœ¼ë©´ ì•„ë¬´ê²ƒë„ ì•ˆ í•¨
         int room = maxAlive - alive;
         if (room <= 0) return;
 
-        // ÀÌ¹ø¿¡ ¸î ¸¶¸® ½ºÆùÇÒÁö °áÁ¤(»óÇÑ °í·Á)
+        // ì´ë²ˆì— ëª‡ ë§ˆë¦¬ ìŠ¤í°í• ì§€ ê²°ì •(ìƒí•œ ê³ ë ¤)
         int toSpawn = spawnCountPerBatch;
         if (toSpawn > room) toSpawn = room;
 
@@ -112,20 +147,20 @@ public class WaveManager : MonoBehaviour
 
     void SpawnOne()
     {
-        // ½ºÆù Æ÷ÀÎÆ®°¡ ¾øÀ¸¸é Ãë¼Ò
+        // ìŠ¤í° í¬ì¸íŠ¸ê°€ ì—†ìœ¼ë©´ ì·¨ì†Œ
         if (spawnPoints == null || spawnPoints.Length == 0) return;
         if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
 
-        // ·£´ı Æ÷ÀÎÆ® »Ì±â
+        // ëœë¤ í¬ì¸íŠ¸ ë½‘ê¸°
         int spIndex = Random.Range(0, spawnPoints.Length);
         Transform sp = spawnPoints[spIndex];
         Vector3 pos = sp.position;
 
-        // Àû Á¾·ù °¡ÁßÄ¡ »Ì±â
+        // ì  ì¢…ë¥˜ ê°€ì¤‘ì¹˜ ë½‘ê¸°
         int eIndex = WeightedPickIndex();
         GameObject prefab = enemyPrefabs[eIndex];
 
-        // ÀÎ½ºÅÏ½º »ı¼º(Ç® ÀÖÀ¸¸é Ç® »ç¿ë, ¾øÀ¸¸é Instantiate)
+        // ì¸ìŠ¤í„´ìŠ¤ ìƒì„±(í’€ ìˆìœ¼ë©´ í’€ ì‚¬ìš©, ì—†ìœ¼ë©´ Instantiate)
         GameObject go;
         if (PoolManager.Instance != null)
         {
@@ -139,18 +174,36 @@ public class WaveManager : MonoBehaviour
                 go = Instantiate(prefab, pos, Quaternion.identity);
         }
 
-        // Àû ¼ö ¼¼±â À§ÇØ EnemyTracker ´Ş±â(¾øÀ¸¸é ºÙ¿©ÁÖ±â)
+        //==========================================================
+
+        if (difficulty != null)
+        {
+            bool makeElite = difficulty.RollIsElite();
+            if (makeElite == true)
+            {
+                EnemyEliteMarker mk = go.GetComponent<EnemyEliteMarker>();
+                if (mk == null)
+                {
+                    mk = go.AddComponent<EnemyEliteMarker>();
+                }
+                mk.ApplyElite(difficulty);
+            }
+        }
+
+        //==========================================================
+
+        // ì  ìˆ˜ ì„¸ê¸° ìœ„í•´ EnemyTracker ë‹¬ê¸°(ì—†ìœ¼ë©´ ë¶™ì—¬ì£¼ê¸°)
         EnemyTracker tracker = go.GetComponent<EnemyTracker>();
         if (tracker == null) tracker = go.AddComponent<EnemyTracker>();
         tracker.manager = this;
 
-        // ¿Ã¶ó°£ Àû ¼ö ¹İ¿µ
+        // ì˜¬ë¼ê°„ ì  ìˆ˜ ë°˜ì˜
         alive = alive + 1;
     }
 
     int WeightedPickIndex()
     {
-        // °£´Ü °¡ÁßÄ¡ ÇÕ + ·çÇÁ
+        // ê°„ë‹¨ ê°€ì¤‘ì¹˜ í•© + ë£¨í”„
         int total = 0;
         int i = 0;
         while (i < enemyWeights.Length)
@@ -178,7 +231,7 @@ public class WaveManager : MonoBehaviour
 
     public void NotifyEnemyDestroyed()
     {
-        // ÀûÀÌ ÆÄ±«µÉ ¶§ EnemyTracker°¡ ÀÌ ÇÔ¼ö¸¦ ºÒ·¯ÁÜ
+        // ì ì´ íŒŒê´´ë  ë•Œ EnemyTrackerê°€ ì´ í•¨ìˆ˜ë¥¼ ë¶ˆëŸ¬ì¤Œ
         alive = alive - 1;
         if (alive < 0) alive = 0;
     }
@@ -191,7 +244,7 @@ public class WaveManager : MonoBehaviour
         }
         if (timerText != null)
         {
-            // ³²Àº ½Ã°£ Ç¥½Ã¿ë(¼Ò¼ö 1ÀÚ¸®)
+            // ë‚¨ì€ ì‹œê°„ í‘œì‹œìš©(ì†Œìˆ˜ 1ìë¦¬)
             float t = nextSpawnTimer;
             if (t < 0f) t = 0f;
             timerText.text = "Next: " + t.ToString("F1") + "s";
@@ -200,5 +253,56 @@ public class WaveManager : MonoBehaviour
         {
             aliveText.text = "Alive: " + alive.ToString() + " / " + maxAlive.ToString();
         }
+    }
+
+    bool SpawnBossOnceThisWave()
+    {
+        if (bossSpawnedThisWave == true)
+        {
+            return false;
+        }
+        if (bossPrefab == null)
+        {
+            return false;
+        }
+
+        Transform sp = bossSpawnPoint;
+        if (sp == null)
+        {
+            // ë³´ìŠ¤ ìŠ¤í° í¬ì¸íŠ¸ê°€ ì—†ìœ¼ë©´ ì¼ë°˜ ìŠ¤í° í¬ì¸íŠ¸ ì¤‘ í•˜ë‚˜ ì‚¬ìš©
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                int idx = Random.Range(0, spawnPoints.Length);
+                sp = spawnPoints[idx];
+            }
+        }
+
+        if (sp == null)
+        {
+            return false;
+        }
+
+        GameObject boss;
+        if (PoolManager.Instance != null)
+        {
+            boss = PoolManager.Instance.Spawn(bossPrefab, sp.position, Quaternion.identity, enemiesParent);
+        }
+        else
+        {
+            if (enemiesParent != null)
+            {
+                boss = Instantiate(bossPrefab, sp.position, Quaternion.identity, enemiesParent);
+            }
+            else
+            {
+                boss = Instantiate(bossPrefab, sp.position, Quaternion.identity);
+            }
+        }
+
+        bossSpawnedThisWave = true;
+        // ì›¨ì´ë¸Œê°€ ì¦ê°€í•˜ë©´ ìë™ìœ¼ë¡œ falseë¡œ ì´ˆê¸°í™”ë˜ê²Œ í•´ì£¼ê¸°(ì•„ë˜ í•œ ì¤„ì„ waveNumber ì¦ê°€ ì§í›„ì— ë„£ì)
+        // bossSpawnedThisWave = false;  â† ì´ ì¤„ì€ waveNumberê°€ ì¦ê°€í•œ ì§í›„ì— ë„£ì–´ì£¼ì„¸ìš”.
+
+        return true;
     }
 }
