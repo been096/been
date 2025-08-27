@@ -14,6 +14,8 @@ public class Health : MonoBehaviour, IDamageable
 
     public bool IsAlive => currentHP > 0;
 
+    //private Victory kills;
+
     void Awake()
     {
         currentHP = maxHP;
@@ -73,6 +75,7 @@ public class Health : MonoBehaviour, IDamageable
             enemyDropper.CreateOrb();
         }
 
+        //kills.AddKill();
         Destroy(gameObject);
     }
 

@@ -11,6 +11,14 @@ public class GoldOrb : MonoBehaviour
     private Transform target;          // 자석 중심
     private GoldSystem goldSystem;     // 돈 받을 대상
 
+    //public Victory gold;
+
+
+
+    private void Awake()
+    {
+        //gold = GetComponent<Victory>();
+    }
     void Update()
     {
         if (attracted && target != null)
@@ -24,6 +32,7 @@ public class GoldOrb : MonoBehaviour
             if (dist <= catchDistance)
             {
                 GiveGoldAndDisappear();
+                //gold.AddGold(value);
             }
         }
     }
