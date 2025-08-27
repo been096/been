@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: -6877935557674005513}
   - component: {fileID: 5615416169156537945}
   - component: {fileID: 7642129467654658736}
+  - component: {fileID: 545757115497377450}
   m_Layer: 6
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -593,6 +594,19 @@ MonoBehaviour:
   maxCount: 3
   xpPerOrb: 3
   spreadRadius: 0.5
+--- !u!114 &545757115497377450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d91d7c69c872c9408398824c37ce044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0

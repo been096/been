@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\UpgradeApplier.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
     <Compile Include="Assets\Scripts\Item\XpOrb.cs" />
