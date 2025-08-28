@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class EnemyCore : MonoBehaviour
 {
+    public Animator animator;
     public float moveSpeed = 2.0f;
     public float externalSpeedMultiplier = 1f;
 
@@ -43,6 +44,7 @@ public class EnemyCore : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool move = false;
         if (health.IsAlive == false || target == null)
         {
             rb.velocity = Vector2.zero;
@@ -53,6 +55,8 @@ public class EnemyCore : MonoBehaviour
         //rb.velocity = dir * moveSpeed;
         float speed = moveSpeed * externalSpeedMultiplier;
         rb.velocity = dir * speed;
+        move = true;
+        animator.SetBool("Move", move);
     }
 
     public void SetTarget(Transform t)

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class AutoAttackController : MonoBehaviour
 {
+    public Animator animator;
+
     public WeaponMount weaponMount;
     public Transform attackOrigin; // 공격의 기준점.
 
@@ -58,6 +60,7 @@ public class AutoAttackController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //bool attack = false;
         float interval = GetCurrentInterval();
         if (interval <= 0.0f)
         {
@@ -70,6 +73,8 @@ public class AutoAttackController : MonoBehaviour
         {
             //공격 처리.
             PerformAttack();
+            //attack = true;
+            animator.SetTrigger("Attack");
             attackTimer = interval;
         }
     }

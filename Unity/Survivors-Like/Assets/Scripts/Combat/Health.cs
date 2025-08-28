@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
+    public Animator animator;
+    
     public int maxHP = 100;
     public int currentHP;
 
@@ -14,7 +16,6 @@ public class Health : MonoBehaviour, IDamageable
 
     public bool IsAlive => currentHP > 0;
 
-    //private Victory kills;
 
     void Awake()
     {
@@ -62,7 +63,7 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    void Die()
+    public void Die()
     {
         if (OnDied != null)
         {
@@ -74,9 +75,8 @@ public class Health : MonoBehaviour, IDamageable
         {
             enemyDropper.CreateOrb();
         }
-
-        //kills.AddKill();
-        Destroy(gameObject);
+        animator.SetTrigger("Die");
+        Destroy(gameObject, 1.5f);
     }
 
     public void Heal(int amount)
