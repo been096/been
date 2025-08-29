@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    public Animator animator;
-    
     public int maxHP = 100;
     public int currentHP;
 
@@ -15,7 +13,6 @@ public class Health : MonoBehaviour, IDamageable
     public Action OnDied;
 
     public bool IsAlive => currentHP > 0;
-
 
     void Awake()
     {
@@ -63,7 +60,7 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    public void Die()
+    void Die()
     {
         if (OnDied != null)
         {
@@ -75,8 +72,20 @@ public class Health : MonoBehaviour, IDamageable
         {
             enemyDropper.CreateOrb();
         }
-        animator.SetTrigger("Die");
-        Destroy(gameObject, 1.5f);
+
+        EnemyTracker enemyTracker = GetComponent<EnemyTracker>();
+        if (enemyTracker != null)
+        {
+            enemyTracker.ProcessDestroy();
+        }
+
+        EnemyGoldDropper enemyGoldDropper = GetComponent<EnemyGoldDropper>();
+        if (enemyGoldDropper != null)
+        {
+            enemyGoldDropper.CreateGold();
+        }
+
+        Destroy(gameObject);
     }
 
     public void Heal(int amount)
@@ -90,7 +99,6 @@ public class Health : MonoBehaviour, IDamageable
         OnHPChanged?.Invoke(currentHP, maxHP); // 3일차 UI바인더가 이 이벤트를 듣고 있음
     }
 
-    // Health.cs 내부에 아래 함수 하나 추가
     public void MultiplyMaxHpPercent(float percent)
     {
         // percent가 60이면 최댓값을 1.6배로 만든다.
@@ -129,4 +137,15 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
+    public bool IsAliveNow()
+    {
+        if (currentHP > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

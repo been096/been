@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 127
+  controlID: 121
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 34
+  controlID: 21
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 511
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -318,7 +318,6 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -1256449614240236909, guid: c8dc0ee76cac4294a991937c8312158e, type: 2}
-    - {fileID: -5855998012291717984, guid: 26b7fd8fc0ad2c34ca1b4570b3a45ded, type: 2}
     - {fileID: -2761573845243117274, guid: 3095c7e55ed42a349b66d8b92557da5f, type: 2}
     - {fileID: 2167909616689113243, guid: 94078cca4d8179346b76855a5844267e, type: 2}
     - {fileID: 7286314024824608118, guid: ab228a789b03b724b853fee28c8c88c1, type: 2}
@@ -332,22 +331,6 @@ MonoBehaviour:
       e11: 0.68526316
       e12: 0
       e13: 127.063156
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.68526316
-      e01: 0
-      e02: 0
-      e03: -19.263153
-      e10: 0
-      e11: 0.68526316
-      e12: 0
-      e13: 127.40579
       e20: 0
       e21: 0
       e22: 1
@@ -421,9 +404,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: c8dc0ee76cac4294a991937c8312158e, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 3095c7e55ed42a349b66d8b92557da5f, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -1256449614240236909, guid: c8dc0ee76cac4294a991937c8312158e, type: 2}
+  - m_Target: {fileID: -2761573845243117274, guid: 3095c7e55ed42a349b66d8b92557da5f, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -839,9 +822,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.0015191, y: -2.0879946, z: 0.18830465}
+    m_Target: {x: 439.16666, y: 230.63606, z: 0.36620295}
     speed: 2
-    m_Value: {x: 1.0015191, y: -2.0879946, z: 0.18830465}
+    m_Value: {x: 426.847, y: 227.85663, z: 0.48113668}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -891,9 +874,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.890228
+    m_Target: 266.90115
     speed: 2
-    m_Value: 8.890228
+    m_Value: 255.40779
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1055,21 +1038,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 16fbffff567100004c720000
+      m_ExpandedIDs: 3646ffff4c47ffffce5bfffff25dffffa692ffff8e93ffffd493ffff16fbffff30640000aca30000c4a30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Attack1_0
-        m_OriginalName: Attack1_0
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -19542
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1123,7 +1106,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1139,7 +1123,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 58690000
     m_LastClickedID: 26968
-    m_ExpandedIDs: 00000000de660000f2680000f4680000f6680000f8680000fa680000fc680000fe68000000690000026900000469000006690000086900000a6900000c6900000e690000106900001269000014690000
+    m_ExpandedIDs: 0000000010670000166700008468000086680000886800008a6800008c6800008e68000090680000926800009468000096680000986800009a6800009c6800009e680000a0680000a2680000a4680000a6680000a8680000aa680000ac680000ae680000b0680000b2680000b4680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1167,21 +1151,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 78edffff7aedffff7cedffffffffffff00000000da660000de660000f2680000f4680000f6680000f8680000fa680000fc68000000690000026900000469000006690000086900000a6900000c6900000e690000106900004469000064690000627400007274000008a0000014a000009ca10000b6a10000bea10000c4a10000
+    m_ExpandedIDs: ffffffff0000000010670000166700008468000086680000886800008a6800008c6800008e68000090680000926800009468000096680000986800009a6800009c6800009e680000a0680000a2680000a4680000a6680000a8680000aa680000ac680000ae680000b0680000b2680000b4680000ea680000ec680000f0680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: WeaponSwap
+      m_OriginalName: WeaponSwap
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 41980
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -1264,7 +1248,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 1188
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

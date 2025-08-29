@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Combat\EnemyAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
+    <Compile Include="Assets\Scripts\WeaponStore.cs" />
     <Compile Include="Assets\Scripts\Item\XpOrb.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\Data\WeaponDefinitionSO.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponMount.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\Combat\ProjectileBullet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Wave\WaveManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\WeaponSwap.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Assets\Scripts\Combat\EnemyXpReward.cs" />
     <Compile Include="Assets\Scripts\Wave\DiffcultyDirector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\Core\PlayerAnimatorSync.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -133,6 +137,7 @@
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\Item\XpCapsule.cs" />
+    <Compile Include="Assets\Scripts\Data\StatsTracker.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
     <Compile Include="Assets\Scripts\UI\Victory.cs" />
     <Compile Include="Assets\Scripts\Item\GoldOrb.cs" />

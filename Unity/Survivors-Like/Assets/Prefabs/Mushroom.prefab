@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: -4172239423158751663}
   m_Layer: 6
   m_Name: Mushroom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,7 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e809899c7b3fbd14f86edd9561f9ac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: -4172239423158751663}
   maxHP: 30
   currentHP: 0
 --- !u!114 &7978714044052356084
