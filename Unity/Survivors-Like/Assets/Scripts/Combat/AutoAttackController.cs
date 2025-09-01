@@ -55,6 +55,18 @@ public class AutoAttackController : MonoBehaviour
 
     void Start()
     {
+        if (WeaponStore.Instance != null)
+        {
+            if (WeaponStore.Instance.currentWeapon == WeaponStore.WeaponType.Melee)
+            {
+                useProjectile = false; // 근접 모드
+            }
+            else
+            {
+                useProjectile = true; // 원거리 모드
+            }
+        }
+
         if (animSync == null)
         {
             animSync = FindAnyObjectByType<PlayerAnimatorSync>();
