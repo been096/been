@@ -10,7 +10,7 @@ public class WeaponStore : MonoBehaviour
     public static WeaponStore Instance;
 
     public enum WeaponType { Melee, Ranged }
-    public WeaponType currentWeapon = WeaponType.Melee;
+    public WeaponType currentWeapon = WeaponType.Ranged;
 
     private void Awake()
     {
