@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: 7642129467654658736}
   - component: {fileID: 545757115497377450}
   - component: {fileID: -3650754976891296337}
+  - component: {fileID: 335683945674053488}
+  - component: {fileID: 364314727446516047}
   m_Layer: 6
   m_Name: Skeleton
   m_TagString: Enemy
@@ -333,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: 16037dbd798344f57a526d53d48f5ead, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -407,7 +409,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -603,7 +605,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4624908523702766770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d91d7c69c872c9408398824c37ce044, type: 3}
   m_Name: 
@@ -630,6 +632,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &335683945674053488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2d46a37295ddb40a03c6aa20438f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  stopDistance: 0.2
+  contactDamage: 5
+  contactRadius: 0.4
+  damageCooldown: 0.6
+  player: {fileID: 0}
+  core: {fileID: 7978714044052356084}
+--- !u!114 &364314727446516047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd697f2ec9eded045959ca2f3a034f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 7978714044052356084}
+  health: {fileID: 38685714759743049}
+  speed: 1.4
+  hp: 80
+  knockbackResistance: 0.7
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0

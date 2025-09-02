@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
     <Compile Include="Assets\Scripts\WeaponStore.cs" />
     <Compile Include="Assets\Scripts\Item\XpOrb.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\EnemyChaseAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
     <Compile Include="Assets\Scripts\UI\ShopManager.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleRunner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Combat\AutoAttackController.cs" />
     <Compile Include="Assets\Scripts\Combat\CameraShake2D.cs" />
@@ -99,11 +101,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyDropper.cs" />
     <Compile Include="Assets\Scripts\WeaponShopUI.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleRanged.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Effect\OnHitStatusApplier.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerCore.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyEliteMarker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Wave\WaveManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -120,6 +124,7 @@
     <Compile Include="Assets\Scripts\Combat\EnemyXpReward.cs" />
     <Compile Include="Assets\Scripts\Wave\DiffcultyDirector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleTanker.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorSync.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -138,8 +143,10 @@
     <Compile Include="Assets\Scripts\UI\GoldUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Combat\KnockbackReceiver.cs" />
+    <Compile Include="Assets\Scripts\Effect\GhostEffect.cs" />
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\EnemyRangedAI.cs" />
     <Compile Include="Assets\Scripts\Item\XpCapsule.cs" />
     <Compile Include="Assets\Scripts\Data\StatsTracker.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
@@ -156,6 +163,7 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Martial Hero\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -165,11 +173,13 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\QuickOutline\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />

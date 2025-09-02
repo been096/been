@@ -1291,6 +1291,13 @@ MonoBehaviour:
   timerText: {fileID: 986240333}
   aliveText: {fileID: 1920371329}
   publicWaveNumber: 1
+  options:
+  - prefab: {fileID: 4624908523702766770, guid: 19546e2a7808acf479f094d21f7cca38, type: 3}
+    weight: 2
+  - prefab: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+    weight: 6
+  - prefab: {fileID: 4624908523702766770, guid: 6a9e2fb7e96541d4e947c44d10fff0a5, type: 3}
+    weight: 2
 --- !u!4 &577017040
 Transform:
   m_ObjectHideFlags: 0

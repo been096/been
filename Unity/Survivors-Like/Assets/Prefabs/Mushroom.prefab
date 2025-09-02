@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: -2796083723859863454}
   - component: {fileID: 6184798852238021098}
   - component: {fileID: -4172239423158751663}
+  - component: {fileID: -8057440973096765939}
+  - component: {fileID: -587179311329747196}
   m_Layer: 6
   m_Name: Mushroom
   m_TagString: Enemy
@@ -579,7 +581,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4624908523702766770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d91d7c69c872c9408398824c37ce044, type: 3}
   m_Name: 
@@ -606,6 +608,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8057440973096765939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2d46a37295ddb40a03c6aa20438f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  stopDistance: 0.2
+  contactDamage: 5
+  contactRadius: 0.4
+  damageCooldown: 0.6
+  player: {fileID: 0}
+  core: {fileID: 7978714044052356084}
+--- !u!114 &-587179311329747196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f0e9118adc99349998a1fc6bea0fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 7978714044052356084}
+  health: {fileID: 38685714759743049}
+  speed: 3.2
+  hp: 20
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0
