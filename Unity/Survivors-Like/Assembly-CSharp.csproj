@@ -122,11 +122,13 @@
     <Compile Include="Assets\Scripts\AutoRelease.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Data\DataLoader.cs" />
+    <Compile Include="Assets\Scripts\Test\SimpleScrollViewController.cs" />
     <Compile Include="Assets\Scripts\UI\LevelupPicker.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarWorld.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyXpReward.cs" />
     <Compile Include="Assets\Scripts\Wave\DiffcultyDirector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\OutGame\TitleFadeout.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleTanker.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorSync.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
