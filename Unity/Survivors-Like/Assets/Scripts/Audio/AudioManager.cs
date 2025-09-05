@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            //DontDestroyOnLoad(gameObject); // 씬 전환 시에도 유지
         }
         else
         {
@@ -52,12 +53,12 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        // 시작 볼륨 세팅
-        //SetMasterVolume(masterVolume);
-        //SetBGMVolume(bgmVolume);
-        //SetSFXVolume(sfxVolume);
+        //시작 볼륨 세팅
+        SetMasterVolume(masterVolume);
+        SetBGMVolume(bgmVolume);
+        SetSFXVolume(sfxVolume);
 
-        //HideAudioPanel()
+        HideAudioPanel();
     }
 
     void Start()
@@ -134,6 +135,7 @@ public class AudioManager : MonoBehaviour
     /// <summary>BGM을 교체해서 루프 재생.</summary>
     public void PlayBGM(AudioClip clip)
     {
+        Debug.Log("BGM 재생 시작: " + clip.name);
         if (bgmSource == null)
         {
             return;
