@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Data\XpTableSO.cs" />
     <Compile Include="Assets\Scripts\UI\XpUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\Test\PrefabRegistry.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyDropper.cs" />
     <Compile Include="Assets\Scripts\WeaponShopUI.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRangedAI.cs" />
+    <Compile Include="Assets\Scripts\Test\TestEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Item\XpCapsule.cs" />
     <Compile Include="Assets\Scripts\Data\StatsTracker.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="Assets\Scripts\UI\Victory.cs" />
     <Compile Include="Assets\Scripts\Item\GoldOrb.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Scripts\Test\DicTest.cs" />
     <Compile Include="Assets\Scripts\Core\XpSystem.cs" />
   </ItemGroup>
   <ItemGroup>
