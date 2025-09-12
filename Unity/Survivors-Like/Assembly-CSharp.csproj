@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\UpgradeApplier.cs" />
+    <Compile Include="Assets\Scripts\Test\QueueTest.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Test\StackTest.cs" />
     <Compile Include="Assets\Scripts\Data\SaveSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Assets\Scripts\Effect\SlowStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Data\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Test\PlayerMoveSimple.cs" />
     <Compile Include="Assets\Scripts\OutGame\Lobby.cs" />
     <Compile Include="Assets\Scripts\Data\UpgradeCatalogSO.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -147,6 +150,7 @@
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyCore.cs" />
     <Compile Include="Assets\Scripts\Tool\TestXpGiver.cs" />
+    <Compile Include="Assets\Scripts\Test\CameraFollowSimple.cs" />
     <Compile Include="Assets\Scripts\Item\GoldSystem.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\UI\GoldUIBinder.cs" />
@@ -162,6 +166,7 @@
     <Compile Include="Assets\Scripts\UI\UpgradePopupUI.cs" />
     <Compile Include="Assets\Scripts\Test\Node.cs" />
     <Compile Include="Assets\Scripts\UI\Victory.cs" />
+    <Compile Include="Assets\Scripts\Test\MapBounds.cs" />
     <Compile Include="Assets\Scripts\Item\GoldOrb.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Test\DicTest.cs" />
