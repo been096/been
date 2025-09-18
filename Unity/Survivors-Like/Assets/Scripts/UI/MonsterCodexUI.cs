@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +30,6 @@ public class MonsterCodexUI : MonoBehaviour
         if (database != null)
         {
             database.BuildMap();
-
         }
 
         if (rebuildOnStart == true)
@@ -65,7 +62,7 @@ public class MonsterCodexUI : MonoBehaviour
             }
         }
     }
-    
+
     bool PassSearch(MonsterDatabaseSO.MonsterDef def, string q)
     {
         if (string.IsNullOrEmpty(q) == true)
@@ -92,7 +89,7 @@ public class MonsterCodexUI : MonoBehaviour
 
             while (j >= 0)
             {
-                bool goLeft = Comparesort(data, list[j], sortMode) < 0;
+                bool goLeft = CompareSort(data, list[j], sortMode) < 0;
                 if (goLeft == true)
                 {
                     list[j + 1] = list[j];
@@ -107,7 +104,7 @@ public class MonsterCodexUI : MonoBehaviour
         }
     }
 
-    int Comparesort(MonsterDatabaseSO.MonsterDef a, MonsterDatabaseSO.MonsterDef b, int sortMode)
+    int CompareSort(MonsterDatabaseSO.MonsterDef a, MonsterDatabaseSO.MonsterDef b, int sortMode)
     {
         if (sortMode == 0)
         {
@@ -115,7 +112,6 @@ public class MonsterCodexUI : MonoBehaviour
             string bn = b.displayName.ToLower();
             return string.Compare(an, bn, System.StringComparison.Ordinal);
         }
-
         else if (cachedSortIndex == 1)
         {
             if (a.maxHP > b.maxHP)
@@ -129,7 +125,6 @@ public class MonsterCodexUI : MonoBehaviour
 
             return 0;
         }
-
         else
         {
             if (a.moveSpeed > b.moveSpeed)
@@ -153,7 +148,7 @@ public class MonsterCodexUI : MonoBehaviour
         for (int i = 0; i < database.monsters.Count; ++i)
         {
             MonsterDatabaseSO.MonsterDef def = database.monsters[i];
-             if (PassSearch(def, cachedSearch) == true)
+            if (PassSearch(def, cachedSearch) == true)
             {
                 work.Add(def);
             }
@@ -167,7 +162,7 @@ public class MonsterCodexUI : MonoBehaviour
         for (int i = 0; i < work.Count; ++i)
         {
             MonsterDatabaseSO.MonsterDef data = work[i];
-            GameObject go = Instantiate(itemPrefab, listContent);
+            GameObject go = GameObject.Instantiate(itemPrefab, listContent);
 
             MonsterListItem item = go.GetComponent<MonsterListItem>();
             if (item != null)
@@ -199,6 +194,7 @@ public class MonsterCodexUI : MonoBehaviour
             speedText.text = "";
             return;
         }
+
         MonsterDatabaseSO.MonsterDef def = database.Get(monsterid);
         if (def != null)
         {
@@ -207,12 +203,11 @@ public class MonsterCodexUI : MonoBehaviour
             hpText.text = def.maxHP.ToString();
             speedText.text = def.moveSpeed.ToString();
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

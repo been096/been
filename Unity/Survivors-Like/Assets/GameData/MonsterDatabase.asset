@@ -12,4 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f534aeedd417c4ea2038cdb647f249, type: 3}
   m_Name: MonsterDatabase
   m_EditorClassIdentifier: 
-  monsters: []
+  monsters:
+  - id: enemy_runner
+    displayName: Runner
+    maxHP: 35
+    moveSpeed: 3
+    prefab: {fileID: 4624908523702766770, guid: adb848f3717f90640b8c6e5c54879084, type: 3}
+    icon: {fileID: 4723107735738678597, guid: 4fb49021b593d7b42a1cb02909787e47, type: 3}
+  - id: enemy_tanker
+    displayName: Tanker
+    maxHP: 120
+    moveSpeed: 1.6
+    prefab: {fileID: 4624908523702766770, guid: 6a9e2fb7e96541d4e947c44d10fff0a5, type: 3}
+    icon: {fileID: 4723107735738678597, guid: 10274325628f7484582b6e8c2467e0d2, type: 3}
+  - id: enemy_ranged
+    displayName: Ranged
+    maxHP: 50
+    moveSpeed: 2.2
+    prefab: {fileID: 4624908523702766770, guid: 19546e2a7808acf479f094d21f7cca38, type: 3}
+    icon: {fileID: 4723107735738678597, guid: dc5f189ac692e9a4a9a9b70130e9667d, type: 3}
