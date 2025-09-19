@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\UI\MonsterCodexUI.cs" />
     <Compile Include="Assets\Scripts\Combat\DamageFlash.cs" />
     <Compile Include="Assets\Scripts\Data\UpgradeDefinitionSO.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\LineBullet.cs" />
     <Compile Include="Assets\Scripts\Data\WeaponDefinitionSO.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponMount.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Scripts\Core\PlayerCore.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyEliteMarker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\Lightning.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Wave\WaveManager.cs" />
@@ -152,7 +154,9 @@
     <Compile Include="Assets\Scripts\UI\HealthUIBinderFilled.cs" />
     <Compile Include="Assets\Scripts\UI\HealthUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\WeaponTest.cs" />
     <Compile Include="Assets\Scripts\Data\CharacterStatsSO.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\FireRing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Combat\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
@@ -168,6 +172,7 @@
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRangedAI.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\BulletShooter.cs" />
     <Compile Include="Assets\Scripts\Test\TestEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Data\ItemDatabaseSO.cs" />
     <Compile Include="Assets\Scripts\Item\XpCapsule.cs" />

@@ -50,3 +50,6 @@ TagManager:
   - name: Actor
     uniqueID: 1520469119
     locked: 0
+  - name: Proof
+    uniqueID: 3389357857
+    locked: 0
