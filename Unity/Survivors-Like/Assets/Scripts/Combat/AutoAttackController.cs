@@ -30,6 +30,8 @@ public class AutoAttackController : MonoBehaviour
     private Vector2 lastMoveDir = Vector2.right;
     public Rigidbody2D playerRb;                      // 플레이어의 Rigidbody2D(이동 벡터 읽기)
 
+    public WeaponShooter weaponShooter;
+
     private void Reset()
     {
         if (weaponMount == null)
@@ -125,7 +127,8 @@ public class AutoAttackController : MonoBehaviour
     {
         if (useProjectile == true)
         {
-            FireProjectile();
+            //FireProjectile();
+            weaponShooter.TryFire();
         }
         else
         {

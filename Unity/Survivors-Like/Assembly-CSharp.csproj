@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Data\MonsterDatabaseSO.cs" />
     <Compile Include="Assets\Scripts\Test\QueueTest.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\WeaponShooter.cs" />
     <Compile Include="Assets\Scripts\Test\StackTest.cs" />
     <Compile Include="Assets\Scripts\Data\SaveSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Assets\Scripts\UI\WeaponSwap.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\ProjectileStandard.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\PoolManager.cs" />
     <Compile Include="Assets\Scripts\AutoRelease.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRangedAI.cs" />
     <Compile Include="Assets\Scripts\RangeWeapon\BulletShooter.cs" />
+    <Compile Include="Assets\Scripts\Data\BulletDataSO.cs" />
     <Compile Include="Assets\Scripts\Test\TestEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Data\ItemDatabaseSO.cs" />
     <Compile Include="Assets\Scripts\Item\XpCapsule.cs" />

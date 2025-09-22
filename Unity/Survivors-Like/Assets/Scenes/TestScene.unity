@@ -1037,6 +1037,7 @@ GameObject:
   - component: {fileID: 874496031}
   - component: {fileID: 874496033}
   - component: {fileID: 874496032}
+  - component: {fileID: 874496034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1296,6 +1297,22 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2208151755305261638, guid: 8fe757527f6ef494c91fce7eda339b63, type: 3}
   poolsize: 30
   shotSpeed: 10
+--- !u!114 &874496034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874496025}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb6d6ba9b5fb4046bfe74bbefda65d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  lifeSeconds: 3
+  damage: 10
+  pierceCount: 0
 --- !u!1 &958461544
 GameObject:
   m_ObjectHideFlags: 0
