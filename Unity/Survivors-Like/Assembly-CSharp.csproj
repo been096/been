@@ -92,6 +92,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\BulletSplit.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleRunner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Combat\AutoAttackController.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Assets\Scripts\UI\GoldUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Combat\KnockbackReceiver.cs" />
+    <Compile Include="Assets\Scripts\RangeWeapon\BulletHoming.cs" />
     <Compile Include="Assets\Scripts\Effect\GhostEffect.cs" />
     <Compile Include="Assets\Scripts\UI\BillboardToCamera.cs" />
     <Compile Include="Assets\Scripts\Wave\EnemyTracker.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Assets\Scripts\Test\Node.cs" />
     <Compile Include="Assets\Scripts\UI\Victory.cs" />
     <Compile Include="Assets\Scripts\Test\MapBounds.cs" />
+    <Compile Include="Assets\Scripts\Test\HomingAndSplitTest.cs" />
     <Compile Include="Assets\Scripts\Item\GoldOrb.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Test\DicTest.cs" />

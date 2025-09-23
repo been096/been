@@ -99,7 +99,7 @@ public class FireRing : MonoBehaviour
             {
                 running = false;
                 lr.enabled = false;
-                //ApplyDamage();
+                ApplyDamage(centerPos, endRadius);
             }
         }
     }

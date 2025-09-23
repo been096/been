@@ -5363,7 +5363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7242079377698900836}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634016224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a548cb7499bfb2e48b9fd8f50d269bad, type: 3}
   m_Name: 
@@ -5401,7 +5401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a86de32df513342916bf3e8e8c68c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1395331932
+--- !u!114 &1395331941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5410,25 +5410,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 634016224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2444ab6a10b43544983a293a1e10bee, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7375ccccb5aae409d2dd1a23126309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: b7dffbad2df900f49894fe8961ba265f, type: 2}
-  projectilePrefab: {fileID: 813254451153108711, guid: 2bc489ce82517b84bb503cff953914b9, type: 3}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &1395331937 stripped
+  homingPrefab: {fileID: 813254451153108711, guid: 441cde69ad39d3b4cb6930dc64a74be8, type: 3}
+  splitPrefab: {fileID: 813254451153108711, guid: c1c5bdb9f3c30b045800a3193456e2d6, type: 3}
+--- !u!114 &1395331942
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 962098107271972825, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
-  m_PrefabInstance: {fileID: 7242079377698900836}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634016224}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2444ab6a10b43544983a293a1e10bee, type: 3}
+  m_Script: {fileID: 11500000, guid: ef44c615f576ae746991e6722d989499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightning: {fileID: 8736591110704634023, guid: 8d36b3f3613b0624ab30a18c908d991a, type: 3}
+  bulletShooter: {fileID: 1395331946}
+  fireRing: {fileID: 5671194102139289740, guid: c21bc469ac76cbb44b0ed9138e032f3a, type: 3}
+--- !u!114 &1395331946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634016224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f48332d6e8f0c438913b9f3ac9f5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2208151755305261638, guid: 8fe757527f6ef494c91fce7eda339b63, type: 3}
+  poolsize: 30
+  shotSpeed: 10
 --- !u!1 &1396729555
 GameObject:
   m_ObjectHideFlags: 0
@@ -9543,16 +9559,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 962098107271972825, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1486171380350711301, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1486171380350711301, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
       propertyPath: weaponShooter
       value: 
-      objectReference: {fileID: 1395331937}
+      objectReference: {fileID: 0}
     - target: {fileID: 2730170961056025653, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9606,8 +9622,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9167171471901512309, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
+      insertIndex: 14
+      addedObject: {fileID: 1395331946}
+    - targetCorrespondingSourceObject: {fileID: 9167171471901512309, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1395331932}
+      addedObject: {fileID: 1395331941}
+    - targetCorrespondingSourceObject: {fileID: 9167171471901512309, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1395331942}
   m_SourcePrefab: {fileID: 100100000, guid: 0da1d326c4d9f0748a56badd55a57701, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
