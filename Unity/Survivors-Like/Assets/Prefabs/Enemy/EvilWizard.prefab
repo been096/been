@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 6327442621238644505}
   - component: {fileID: 1787915579423662920}
   - component: {fileID: 880334947267388704}
-  - component: {fileID: 2587551539446017760}
+  - component: {fileID: 5156732095863457158}
   - component: {fileID: 38685714759743049}
   - component: {fileID: 7978714044052356084}
   - component: {fileID: -1204667207891555832}
@@ -264,15 +264,13 @@ GameObject:
   - component: {fileID: 6619819510157351035}
   - component: {fileID: -1299411562397885767}
   - component: {fileID: 1612034765295270146}
-  - component: {fileID: -758229951218492768}
-  - component: {fileID: -6548135120813403293}
-  - component: {fileID: -2796083723859863454}
-  - component: {fileID: 6184798852238021098}
-  - component: {fileID: -4172239423158751663}
-  - component: {fileID: -8057440973096765939}
-  - component: {fileID: -587179311329747196}
+  - component: {fileID: 6748878208885241091}
+  - component: {fileID: -662563089996043210}
+  - component: {fileID: 8963956402175611053}
+  - component: {fileID: 6206715363170987025}
+  - component: {fileID: -7009617937002332612}
   m_Layer: 6
-  m_Name: Mushroom
+  m_Name: EvilWizard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +286,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.78, y: -0.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5529036850674859012}
@@ -332,11 +330,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1520469119
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 4fb49021b593d7b42a1cb02909787e47, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 462434960, guid: 90c7332c857b6b043bad30766e14a946, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -373,8 +371,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &2587551539446017760
-PolygonCollider2D:
+--- !u!58 &5156732095863457158
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -406,21 +404,8 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 6}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &38685714759743049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e809899c7b3fbd14f86edd9561f9ac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 30
+  maxHP: 300
   currentHP: 0
 --- !u!114 &7978714044052356084
 MonoBehaviour:
@@ -527,7 +512,7 @@ MonoBehaviour:
   targetHealth: {fileID: 38685714759743049}
   fillImage: {fileID: 0}
   slider: {fileID: 8155093110419792641}
---- !u!114 &-758229951218492768
+--- !u!114 &6748878208885241091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
---- !u!114 &-6548135120813403293
+--- !u!114 &-662563089996043210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,7 +542,7 @@ MonoBehaviour:
   maxCount: 2
   goldPerCoin: 1
   spreadRadius: 0.4
---- !u!114 &-2796083723859863454
+--- !u!114 &8963956402175611053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -574,7 +559,7 @@ MonoBehaviour:
   maxCount: 3
   xpPerOrb: 3
   spreadRadius: 0.5
---- !u!114 &6184798852238021098
+--- !u!114 &6206715363170987025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -586,8 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d91d7c69c872c9408398824c37ce044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
---- !u!95 &-4172239423158751663
+  damage: 10
+--- !u!95 &-7009617937002332612
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -597,7 +582,7 @@ Animator:
   m_GameObject: {fileID: 4624908523702766770}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab228a789b03b724b853fee28c8c88c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0688589c1ca4a444eabb400524b23394, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -608,41 +593,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-8057440973096765939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4624908523702766770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2d46a37295ddb40a03c6aa20438f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  stopDistance: 0.2
-  contactDamage: 5
-  contactRadius: 0.4
-  damageCooldown: 0.6
-  player: {fileID: 0}
-  core: {fileID: 7978714044052356084}
---- !u!114 &-587179311329747196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4624908523702766770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3f0e9118adc99349998a1fc6bea0fba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  core: {fileID: 7978714044052356084}
-  health: {fileID: 38685714759743049}
-  speed: 3.2
-  hp: 20
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0

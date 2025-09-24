@@ -75,4 +75,10 @@ public class EnemyCore : MonoBehaviour
         }
         externalSpeedMultiplier = externalSpeedMultiplier * m;
     }
+
+    public void Buff()
+    {
+        //health.maxHP = health.maxHP + 30;
+        moveSpeed = moveSpeed + 0.5f;
+    }
 }

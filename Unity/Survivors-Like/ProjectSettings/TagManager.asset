@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 2568808347
     locked: 0
+  - name: Lantern
+    uniqueID: 1308656873
+    locked: 0
   - name: Actor
     uniqueID: 1520469119
     locked: 0

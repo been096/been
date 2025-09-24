@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Item\XpOrb.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyChaseAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\Core\DayNightController.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
     <Compile Include="Assets\Scripts\UI\ShopManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Effect\SlowStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\UI\NightFogOverlay.cs" />
     <Compile Include="Assets\Scripts\Test\Minimap\MinimapCameraFollow.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerDash.cs" />
     <Compile Include="Assets\Scripts\Data\SaveData.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Data\XpTableSO.cs" />
     <Compile Include="Assets\Scripts\UI\XpUIBinder.cs" />
+    <Compile Include="Assets\Scripts\Core\worldTintController.cs" />
     <Compile Include="Assets\Scripts\Test\Minimap\MinimapController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Test\PrefabRegistry.cs" />
@@ -150,6 +153,7 @@
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleTanker.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorSync.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
+    <Compile Include="Assets\Scripts\Test\RadialLightSprite.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Test\CallTest.cs" />
