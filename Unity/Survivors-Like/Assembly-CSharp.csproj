@@ -61,19 +61,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\UpgradeApplier.cs" />
+    <Compile Include="Assets\Scripts\Weather\WeatherController.cs" />
     <Compile Include="Assets\Scripts\Data\MonsterDatabaseSO.cs" />
     <Compile Include="Assets\Scripts\Test\QueueTest.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\RangeWeapon\WeaponShooter.cs" />
+    <Compile Include="Assets\Scripts\Environment\worldTintController.cs" />
     <Compile Include="Assets\Scripts\Test\StackTest.cs" />
     <Compile Include="Assets\Scripts\Data\SaveSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyGoldDropper.cs" />
     <Compile Include="Assets\Scripts\WeaponStore.cs" />
+    <Compile Include="Assets\Scripts\Environment\RadialLightSprite.cs" />
     <Compile Include="Assets\Scripts\Item\XpOrb.cs" />
     <Compile Include="Assets\Scripts\EmemyAI\EnemyChaseAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\Scripts\Core\DayNightController.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactContext.cs" />
     <Compile Include="Assets\Scripts\UI\ShopManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -102,17 +104,16 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Effect\SlowStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\Scripts\UI\NightFogOverlay.cs" />
     <Compile Include="Assets\Scripts\Test\Minimap\MinimapCameraFollow.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerDash.cs" />
     <Compile Include="Assets\Scripts\Data\SaveData.cs" />
     <Compile Include="Assets\Scripts\Test\PlayerMoveSimple.cs" />
     <Compile Include="Assets\Scripts\OutGame\Lobby.cs" />
     <Compile Include="Assets\Scripts\Data\UpgradeCatalogSO.cs" />
+    <Compile Include="Assets\Scripts\Environment\NightFogOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Data\XpTableSO.cs" />
     <Compile Include="Assets\Scripts\UI\XpUIBinder.cs" />
-    <Compile Include="Assets\Scripts\Core\worldTintController.cs" />
     <Compile Include="Assets\Scripts\Test\Minimap\MinimapController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Test\PrefabRegistry.cs" />
@@ -153,7 +154,7 @@
     <Compile Include="Assets\Scripts\EmemyAI\EnemyRoleTanker.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorSync.cs" />
     <Compile Include="Assets\Scripts\Combat\ImpactOrchestrator.cs" />
-    <Compile Include="Assets\Scripts\Test\RadialLightSprite.cs" />
+    <Compile Include="Assets\Scripts\Environment\DayNightController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Test\CallTest.cs" />
@@ -566,18 +567,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.GradleProject">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

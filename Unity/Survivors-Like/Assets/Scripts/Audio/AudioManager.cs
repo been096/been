@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) == true)
+        if (Input.GetKeyDown(KeyCode.P) == true)
         {
             if (audioPanel != null)
             {

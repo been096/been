@@ -73,11 +73,11 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -905609439
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Positions:
-  - {x: -0.18786792, y: -0.7606598, z: 0}
-  - {x: -0.18883099, y: -0.7410564, z: 0}
+  - {x: -0.31507647, y: -1.3121322, z: 0}
+  - {x: -0.3160395, y: -1.2925289, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

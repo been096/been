@@ -56,3 +56,6 @@ TagManager:
   - name: Proof
     uniqueID: 3389357857
     locked: 0
+  - name: Weather
+    uniqueID: 2337173961
+    locked: 0
