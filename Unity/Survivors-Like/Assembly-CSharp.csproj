@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Core\PlayerDash.cs" />
     <Compile Include="Assets\Scripts\Data\SaveData.cs" />
     <Compile Include="Assets\Scripts\Test\PlayerMoveSimple.cs" />
+    <Compile Include="Assets\Scripts\Weapon\OribtProjectile.cs" />
     <Compile Include="Assets\Scripts\OutGame\Lobby.cs" />
     <Compile Include="Assets\Scripts\Data\UpgradeCatalogSO.cs" />
     <Compile Include="Assets\Scripts\Environment\NightFogOverlay.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\UI\HealthUIBinderFilled.cs" />
     <Compile Include="Assets\Scripts\UI\HealthUIBinder.cs" />
+    <Compile Include="Assets\Scripts\Weapon\BarrierZone.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\RangeWeapon\WeaponTest.cs" />
     <Compile Include="Assets\Scripts\Data\CharacterStatsSO.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Assets\Scripts\Test\CameraFollowSimple.cs" />
     <Compile Include="Assets\Scripts\Item\GoldSystem.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Weapon\OrbitWeapon.cs" />
     <Compile Include="Assets\Scripts\UI\GoldUIBinder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Combat\KnockbackReceiver.cs" />
