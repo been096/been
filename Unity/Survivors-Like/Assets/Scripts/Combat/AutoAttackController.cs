@@ -127,8 +127,8 @@ public class AutoAttackController : MonoBehaviour
     {
         if (useProjectile == true)
         {
-            //FireProjectile();
-            weaponShooter.TryFire();
+            FireProjectile();
+            //weaponShooter.TryFire();
         }
         else
         {
