@@ -27,6 +27,8 @@ public class EnemyRangedAI : MonoBehaviour
     public Transform player;
     public EnemyCore core;
 
+    public Animator animator;
+
     private Rigidbody2D _rb;
     private float fireTimer = 0f;
 
@@ -89,6 +91,14 @@ public class EnemyRangedAI : MonoBehaviour
             // 적정 거리대 -> 정지.
             _rb.velocity = Vector2.zero;
         }
+
+        bool move = false;
+        if (_rb.velocity != Vector2.zero)
+        {
+            move = true;
+        }
+
+        animator.SetBool("move", move);
 
         // 2) 사격.
         if (dist <= desiredRange + 0.1f)

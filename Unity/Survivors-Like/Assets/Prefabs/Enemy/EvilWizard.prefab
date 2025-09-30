@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 8963956402175611053}
   - component: {fileID: 6206715363170987025}
   - component: {fileID: -7009617937002332612}
+  - component: {fileID: -1403440416653180896}
   m_Layer: 6
   m_Name: EvilWizard
   m_TagString: Enemy
@@ -331,7 +332,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1520469119
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 462434960, guid: 90c7332c857b6b043bad30766e14a946, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -593,6 +594,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1403440416653180896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624908523702766770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2d46a37295ddb40a03c6aa20438f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  stopDistance: 0.2
+  contactDamage: 5
+  contactRadius: 0.4
+  damageCooldown: 0.6
+  player: {fileID: 0}
+  core: {fileID: 7978714044052356084}
+  animator: {fileID: -7009617937002332612}
 --- !u!1 &4980075190861120273
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class EnemyChaseAI : MonoBehaviour
     public Transform player;                 // Player.
     public EnemyCore core;                   // externalSpeedMultiplier 사용.
 
+    public Animator animator;
+
     private Rigidbody2D _rb;
     private float _damageTimer = 0f;
 
@@ -71,6 +73,14 @@ public class EnemyChaseAI : MonoBehaviour
             Vector2 dir = toPlayer.normalized;  // 벡터 정규화. 벡터의 크기를 1로 만든다. 방향 정보만 사용하기 위해서.
             Vector2 v = dir * speed;
             _rb.velocity = v;
+            bool move = false;
+            if (v != Vector2.zero)
+            {
+                move = true;
+                
+            }
+            animator.SetBool("Move", move);
+
         }
         else
         {
