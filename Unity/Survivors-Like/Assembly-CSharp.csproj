@@ -171,6 +171,7 @@
     <Compile Include="Assets\Scripts\RangeWeapon\FireRing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Combat\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\EmemyAI\SuicideBomber.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerinputFacade.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyCore.cs" />
     <Compile Include="Assets\Scripts\Tool\TestXpGiver.cs" />
