@@ -69,12 +69,14 @@
     <Compile Include="Assets\Scripts\Camera\HeadBobEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraEffectsMixer.cs" />
     <Compile Include="Assets\Scripts\Camera\FovKickEffect.cs" />
+    <Compile Include="Assets\Scripts\Player\GroundingStabilizer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Utillity\QualityPresetApplier.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\Utillity\DebugHudUGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Scripts\Utillity\MovementDebugHud.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Utillity\GridGizmo.cs" />
