@@ -18,13 +18,15 @@ public class CameraEffectsMixer : MonoBehaviour
     [Header("Master Intensity")]
     [Range(0f, 3f)] public float positionIntensity = 1.25f;   // 위치 오프셋 전체 배율.
     [Range(0f, 3f)] public float rotationIntensity = 1.25f;   // 회전 오프셋 전체 배율.
-    [Range(0f, 3f)] public float fovIntensity = 1.10f;        // 
+    [Range(0f, 3f)] public float fovIntensity = 1.10f;        // FOV 오프셋 전체 배율.
 
     private Vector3 baseLocalPosition;
     private Quaternion baseLocalRotation;
     private float baseFov;
 
     private ICameraEffect[] effectes;
+
+    private bool setFOV = true;
 
     private void Awake()
     {
@@ -90,9 +92,14 @@ public class CameraEffectsMixer : MonoBehaviour
         Quaternion rotOffsetQuat = Quaternion.Euler(rotEulerOffset); // 오일러 -> 쿼터니언
         transform.localRotation = baseLocalRotation * rotOffsetQuat;
 
-        if (targetcamera != null)
+        if (targetcamera != null && setFOV == true)
         {
             targetcamera.fieldOfView = baseFov + fovOffset;
         }
+    }
+
+    public void SetFOV(bool value)
+    {
+        setFOV = value;
     }
 }
