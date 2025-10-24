@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\Camera\HeadBobEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraEffectsMixer.cs" />
     <Compile Include="Assets\Scripts\Camera\FovKickEffect.cs" />
+    <Compile Include="Assets\Scripts\Hit\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Player\GroundingStabilizer.cs" />
+    <Compile Include="Assets\Scripts\Hit\Hitbox.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Utillity\QualityPresetApplier.cs" />
@@ -103,6 +105,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Camera\RecoilApplier.cs" />
     <Compile Include="Assets\Scripts\Player\LocomotionFeed.cs" />
+    <Compile Include="Assets\Scripts\Stat\Health.cs" />
+    <Compile Include="Assets\Scripts\Data\DecalPool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Utillity\PostVolumeController.cs" />
@@ -112,6 +116,7 @@
     <Compile Include="Assets\Scripts\Camera\LeanEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\Data\ImpactEffectRouter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />

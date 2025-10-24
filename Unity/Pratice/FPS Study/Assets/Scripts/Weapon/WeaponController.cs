@@ -42,6 +42,9 @@ public class WeaponController : MonoBehaviour
     public ParticleSystem hitVfxPrefab;         // 피격 스파크/먼지.
     public GameObject bulletDecalPrefab;        // 데칼(선택)
 
+    public ImpactEffectRouter impactRouter;     // 표면 임팩트 라우터.
+    public bool applyHitboxMultiplier = true;
+
     // 내부 상태
     private int ammoInMag;                      // 현재 탄창 잔탄.
     private float fireCooldown;                 // 발사 쿨다운 타이머.
@@ -216,9 +219,59 @@ public class WeaponController : MonoBehaviour
 
         if (got == true)
         {
+            
+            // 데미지 전달.
+            float finalDamage = damage;
+
+            Hitbox hb = hit.collider.GetComponent<Hitbox>();
+            if (hb != null)
+            {
+                Debug.Log("name = " + hb.gameObject.name);
+                if (applyHitboxMultiplier == true)
+                {
+                    finalDamage = finalDamage * hb.damageMultiplier;
+                }
+
+                if (hb.owner != null)
+                {
+                    Debug.Log("Damage = " + finalDamage);
+                    hb.owner.ApplyDamage(finalDamage, hit.point, hit.normal, transform);
+                }
+                else
+                {
+                    IDamagealbe id = hit.collider.GetComponentInParent<IDamagealbe>();
+                    if (id != null)
+                    {
+                        Debug.Log("Damage = " + finalDamage);
+                        id.ApplyDamage(finalDamage, hit.point, hit.normal, transform);
+                    }
+                }
+            }
+            else
+            {
+                IDamagealbe dmg = hit.collider.GetComponentInParent<IDamagealbe>();
+                if (dmg != null)
+                {
+                    Debug.Log("Damage = " + finalDamage);
+                    dmg.ApplyDamage(finalDamage, hit.point, hit.normal, transform);
+                }
+            }
+
             // 데미지 인터페이스가 있다면 TryGetComponent로 처리 가능(데모에선 VFX/데칼만)
-            SpawnHitVfx(hit.point, hit.normal);
-            SpawnDecal(hit.point, hit.normal);
+            //SpawnHitVfx(hit.point, hit.normal);
+            //SpawnDecal(hit.point, hit.normal);
+
+            // 표면 임팩트(오디오/VFX/데칼)
+            if (impactRouter != null)
+            {
+                impactRouter.SpawnImpact(hit);
+            }
+            else
+            {
+                // 기본 VFX/데칼 호출이 있었다면, 이제 Router로 대체하는 걸 권장.
+                SpawnHitVfx(hit.point, hit.normal);
+                SpawnDecal(hit.point, hit.normal);
+            }
         }
     }
 
