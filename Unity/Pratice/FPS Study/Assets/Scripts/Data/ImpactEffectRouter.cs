@@ -40,11 +40,11 @@ public class ImpactEffectRouter : MonoBehaviour
     public void SpawnImpact(RaycastHit hit)
     {
         // 1) 표면 타입 판정.
-        SurfaceType type = SurfaceType.Contrete;
+        SurfaceType type = SurfaceType.Concrete;
         SurfaceMaterial sm = hit.collider.GetComponent<SurfaceMaterial>();
         if (sm != null)
         {
-            type = sm.SurfaceType;
+            type = sm.surfaceType;
         }
 
         // 2) 오디오.
@@ -85,7 +85,7 @@ public class ImpactEffectRouter : MonoBehaviour
 
     private AudioClip GetClip(SurfaceType t)
     {
-        if (t == SurfaceType.Contrete)
+        if (t == SurfaceType.Concrete)
         {
             return concreteClip;
         }

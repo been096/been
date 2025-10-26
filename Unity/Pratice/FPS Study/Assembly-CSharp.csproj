@@ -67,12 +67,14 @@
     <Compile Include="Assets\Scripts\Camera\LandingImpulseEffect.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\Player\StepEventSource.cs" />
     <Compile Include="Assets\Scripts\Camera\HeadBobEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraEffectsMixer.cs" />
     <Compile Include="Assets\Scripts\Camera\FovKickEffect.cs" />
     <Compile Include="Assets\Scripts\Hit\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Player\GroundingStabilizer.cs" />
     <Compile Include="Assets\Scripts\Hit\Hitbox.cs" />
+    <Compile Include="Assets\Scripts\Data\FootstepRouter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Utillity\QualityPresetApplier.cs" />
@@ -109,7 +111,10 @@
     <Compile Include="Assets\Scripts\Data\DecalPool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Scripts\Environment\SurfaceMaterial.cs" />
+    <Compile Include="Assets\Scripts\Camera\SimpleCameraImpulse.cs" />
     <Compile Include="Assets\Scripts\Utillity\PostVolumeController.cs" />
+    <Compile Include="Assets\Scripts\Player\FootstepSurfaceDetector.cs" />
     <Compile Include="Assets\Settings\CameraDebugHUD.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
