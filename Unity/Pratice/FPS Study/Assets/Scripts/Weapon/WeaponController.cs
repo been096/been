@@ -43,7 +43,7 @@ public class WeaponController : MonoBehaviour
     public GameObject bulletDecalPrefab;        // 데칼(선택)
 
     public ImpactEffectRouter impactRouter;     // 표면 임팩트 라우터.
-    public bool applyHitboxMultiplier = true;
+    public bool applyHitboxMultiplier = true;   // 히트박스 배수 적용 여부.
 
     // 내부 상태
     private int ammoInMag;                      // 현재 탄창 잔탄.
@@ -219,7 +219,7 @@ public class WeaponController : MonoBehaviour
 
         if (got == true)
         {
-            
+            // ===========================================================================
             // 데미지 전달.
             float finalDamage = damage;
 
@@ -354,22 +354,22 @@ public class WeaponController : MonoBehaviour
         float newFov = Mathf.SmoothDamp(playerCamera.fieldOfView, target, ref fovVel, adsBlendTime);
         playerCamera.fieldOfView = newFov;
 
-        // (선택) 마우스 감도 배율.
-        //if (applyMouseSensitivityScale == true)
-        //{
-        //    MouseLook ml = playerCamera.GetComponentInParent<MouseLook>();
-        //    if (ml != null)
-        //    {
-        //        if (adsHeld == true)
-        //        {
-        //            ml.SetSensitivityMultiplier(adsMouseScale);
-        //        }
-        //        else
-        //        {
-        //            ml.SetSensitivityMultiplier(1.0f);
-        //        }
-        //    }
-        //}
+        // (선택)마우스 감도 배율.
+        if (applyMouseSensitivityScale == true)
+        {
+            MouseLook ml = playerCamera.GetComponentInParent<MouseLook>();
+            if (ml != null)
+            {
+                if (adsHeld == true)
+                {
+                    ml.SetSensitivityMultiplier(adsMouseScale);
+                }
+                else
+                {
+                    ml.SetSensitivityMultiplier(1.0f);
+                }
+            }
+        }
     }
 
     private void UpdateAmmoHud()
