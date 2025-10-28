@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Player\StepEventSource.cs" />
     <Compile Include="Assets\Scripts\Camera\HeadBobEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraEffectsMixer.cs" />
+    <Compile Include="Assets\Scripts\Weapon\ThrowableController.cs" />
     <Compile Include="Assets\Scripts\Camera\FovKickEffect.cs" />
     <Compile Include="Assets\Scripts\Hit\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Player\GroundingStabilizer.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\Utillity\DebugHudUGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Utillity\MovementDebugHud.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Grenade.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\UI\AmmoHUD.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\Scripts\Utillity\PostVolumeController.cs" />
     <Compile Include="Assets\Scripts\Player\FootstepSurfaceDetector.cs" />
     <Compile Include="Assets\Settings\CameraDebugHUD.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponProjectileLauncher.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
@@ -130,6 +133,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\UI\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Weapon\ProjectileBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

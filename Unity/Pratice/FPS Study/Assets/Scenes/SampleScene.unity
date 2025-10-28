@@ -623,6 +623,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238532453}
   m_CullTransparentMesh: 1
+--- !u!1 &293260119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293260120}
+  m_Layer: 10
+  m_Name: hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &293260120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293260119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.09865985, z: 0, w: 0.99512124}
+  m_LocalPosition: {x: 0.405, y: -0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: -11.324, z: 0}
 --- !u!1 &294406095
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +971,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2139502231}
+  - {fileID: 293260120}
   m_Father: {fileID: 327734523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -5734,6 +5767,7 @@ GameObject:
   - component: {fileID: 2115005042}
   - component: {fileID: 2115005045}
   - component: {fileID: 2115005048}
+  - component: {fileID: 2115005049}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -5949,6 +5983,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: aa191f77-3df6-4634-82e1-a782167cb23f
     m_ActionName: 'Player/Reload[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2115005049}
+        m_TargetAssemblyTypeName: ThrowableController, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a0c30414-bb5e-4568-bf30-fca127d04f5e
+    m_ActionName: 'Player/Throw[/Keyboard/g]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -6033,6 +6083,8 @@ MonoBehaviour:
   recoil: {fileID: 2115005042}
   crosshair: {fileID: 1333742098}
   ammoHud: {fileID: 657748012}
+  launcher: {fileID: 2139502232}
+  useBulletPrefab: 1
   magSize: 55
   reserveAmmo: 90
   reloadTime: 1.9
@@ -6192,6 +6244,79 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2115005049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115005035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b021e53c6dd637458dad49578f6610d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 330585545}
+  hand: {fileID: 293260120}
+  grenadePrefab: {fileID: 8343661909567249786, guid: 39f54d311bcc7f743a170a39dd1a4c48, type: 3}
+  baseThorwSpeed: 7
+  maxThorwSpeed: 11
+  chargeTime: 1
+  angularSpin: 20
+--- !u!1 &2139502230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139502231}
+  - component: {fileID: 2139502232}
+  m_Layer: 10
+  m_Name: WeaponLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2139502231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139502230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139502232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139502230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4a41b06c21f3743ac879560b628b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 2139502231}
+  playerCamera: {fileID: 330585545}
+  projectilePrefab: {fileID: 341798875047162167, guid: e078b59e5bf4d4748a409c5d975dc4e9, type: 3}
+  fireMask:
+    serializedVersion: 2
+    m_Bits: 0
+  projectileSpeed: 10
+  projectileUseGravity: 0
+  spreadDeg: 0
+  useConeCosineBias: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

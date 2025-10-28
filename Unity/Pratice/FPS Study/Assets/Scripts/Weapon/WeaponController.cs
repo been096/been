@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.WSA;
 
 /// <summary>
 /// 무기의 핵심 로직: 탄약, 연사 쿨다운, 재장전, ADS(FOV), 히트스캔 사격, 반동 이벤트.
@@ -17,6 +18,9 @@ public class WeaponController : MonoBehaviour
     public RecoilApplier recoil;                // 반동 적용(카메라 킥)
     public CrosshairUI crosshair;               // 크로스헤어 확산 반영.
     public AmmoHUD ammoHud;                     // 탄약 표시 TMP.
+
+    public WeaponProjectileLauncher launcher;   // 총알 Prefab 발사를 위한 참조용.
+    public bool useBulletPrefab;                // 총알 프리펩.
 
     [Header("Ammo")]
     public int magSize = 30;                    // 탄창 크기.
@@ -98,7 +102,14 @@ public class WeaponController : MonoBehaviour
         // 4) 발사 처리(자동사격: 버튼 유지 시 연사)
         if (fireHeld == true)
         {
-            TryFire();
+            if (launcher != null && useBulletPrefab == true)
+            {
+                launcher.FireOne();
+            }
+            else
+            {
+                TryFire();
+            }
         }
     }
 
