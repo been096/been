@@ -2199,6 +2199,7 @@ GameObject:
   - component: {fileID: 852939477}
   - component: {fileID: 852939476}
   - component: {fileID: 852939475}
+  - component: {fileID: 852939480}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -2252,6 +2253,7 @@ MonoBehaviour:
   attackCooldown: 1.2
   searchDuration: 3
   drawForward: 0
+  host: {fileID: 852939480}
 --- !u!114 &852939477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,6 +2317,18 @@ Transform:
   - {fileID: 6960094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &852939480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852939474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa30a984ba19b3469c9d7ba04ad41ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &894819050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3170,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119638527}
   m_CullTransparentMesh: 1
+--- !u!1 &1125980704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125980708}
+  - component: {fileID: 1125980707}
+  - component: {fileID: 1125980706}
+  - component: {fileID: 1125980705}
+  m_Layer: 0
+  m_Name: StatusEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1125980705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125980704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853b5e4299b8c364090cad436cc953c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: Effect
+  icon: {fileID: 0}
+  duration: 3
+  refreshOnReapply: 1
+--- !u!114 &1125980706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125980704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e0f85a22565154385ff02da3a85fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: Effect
+  icon: {fileID: 0}
+  duration: 3
+  refreshOnReapply: 1
+  dpsPerStack: 5
+  tickInterval: 0.5
+  maxStacks: 5
+  extendDurationOnReapply: 1
+--- !u!114 &1125980707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125980704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc2d974b0256d84e9d76055d5c5b6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: Effect
+  icon: {fileID: 0}
+  duration: 3
+  refreshOnReapply: 1
+  speedMultiplier: 0.6
+--- !u!4 &1125980708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125980704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9595001, y: 1.05, z: 2.715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1142679149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6337,3 +6438,4 @@ SceneRoots:
   - {fileID: 15720111}
   - {fileID: 1372118911}
   - {fileID: 852939479}
+  - {fileID: 1125980708}

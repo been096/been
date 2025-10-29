@@ -37,6 +37,8 @@ public class EnemyAIFlat : MonoBehaviour
     [Header("Debug")]
     public bool drawForward = false;        // 전방 디버그 레이 표기.
 
+    public StatusEffectHost host;
+
     // ===== 내부 상태 필드(역할 주석) =====================================================================
     private State state;                    // 현재 FSM 상태.
     private float attackTimer;              // 공격 쿨다운 카운터(0이면 가능)
@@ -168,8 +170,15 @@ public class EnemyAIFlat : MonoBehaviour
 
         if (dist > stoppingDistance)
         {
+            float speedMul = 1.0f;
+            if (host != null)
+            {
+                speedMul = host.GetSpeedMultiplier();
+            }
+            Vector3 move = transform.forward * (chaseSpeed * speedMul);
+            
             // 전진 벡터(월드 전방 기준)
-            Vector3 move = transform.forward * chaseSpeed;
+            //Vector3 move = transform.forward * chaseSpeed;
 
             // CC 안정화를 위한 중력 보정(평지에서도 경계에서 떨림을 줄임)
             move.y = gravity;
@@ -207,6 +216,16 @@ public class EnemyAIFlat : MonoBehaviour
 
     private void UpdateAttack(bool seen)
     {
+        //// 0) 스턴 중이면 리턴.
+        //if (host != null)
+        //{
+        //    if (host.IsStunned() == true)
+        //    {
+        //        // 이동/공격/마우스입력 처리 중단.
+        //        return;
+        //    }
+        //}
+
         // 1) 사거리 유지가 깨지면 Chase로 복귀.
         if (player != null)
         {

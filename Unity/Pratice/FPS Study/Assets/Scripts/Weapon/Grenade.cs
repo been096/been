@@ -118,14 +118,24 @@ public class Grenade : MonoBehaviour
 
             id.ApplyDamage(dmg, hp, n, transform);
 
+            //========================================================================
+            // 예 : 폭발에 맞으면 3초 DoT 1스택.
+            StatusEffect_DOT dotPorset = GameObject.FindAnyObjectByType<StatusEffect_DOT>();
+            if (dotPorset != null)
+            {
+                StatusEffectApplier.ApplyTo(c.gameObject, dotPorset);
+            }
+
            
         }
-        // 3)
+        // 3) 파괴.
         Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
     {
         // 폭발 반경 시각화.
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, radius);
     }
 }

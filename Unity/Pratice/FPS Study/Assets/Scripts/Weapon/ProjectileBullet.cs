@@ -150,5 +150,13 @@ public class ProjectileBullet : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-hit.normal);
             GameObject decal = Instantiate(decalPrefab, hit.point + hit.normal * decalOffset, rot);
         }
+
+        //====================================================================
+        // 예 : 피탄 대상에게 2초짜리 0.7배 슬로우 부여.
+        StatusEffect_Slow slowPreset = GameObject.FindAnyObjectByType<StatusEffect_Slow>();
+        if (slowPreset != null)
+        {
+            StatusEffectApplier.ApplyTo(hit.collider.gameObject, slowPreset);
+        }
     }
 }
