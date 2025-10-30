@@ -217,14 +217,14 @@ public class EnemyAIFlat : MonoBehaviour
     private void UpdateAttack(bool seen)
     {
         //// 0) 스턴 중이면 리턴.
-        //if (host != null)
-        //{
-        //    if (host.IsStunned() == true)
-        //    {
-        //        // 이동/공격/마우스입력 처리 중단.
-        //        return;
-        //    }
-        //}
+        if (host != null)
+        {
+            if (host.IsStunned() == true)
+            {
+                // 이동/공격/마우스입력 처리 중단.
+                return;
+            }
+        }
 
         // 1) 사거리 유지가 깨지면 Chase로 복귀.
         if (player != null)

@@ -2197,9 +2197,9 @@ GameObject:
   - component: {fileID: 852939479}
   - component: {fileID: 852939478}
   - component: {fileID: 852939477}
-  - component: {fileID: 852939476}
   - component: {fileID: 852939475}
   - component: {fileID: 852939480}
+  - component: {fileID: 852939481}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -2227,33 +2227,6 @@ MonoBehaviour:
   hitVfxPrefab: {fileID: 0}
   audioSource: {fileID: 0}
   hurtClip: {fileID: 0}
---- !u!114 &852939476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852939474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b813c62681cfde449aef6dbc60fb933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  senses: {fileID: 852939477}
-  health: {fileID: 852939475}
-  player: {fileID: 2115005038}
-  playerDamagealbe: {fileID: 2115005048}
-  controller: {fileID: 852939478}
-  chaseSpeed: 3
-  rotateSpeed: 12
-  stoppingDistance: 1.2
-  gravity: -20
-  attackRange: 1.8
-  attackDamage: 10
-  attackCooldown: 1.2
-  searchDuration: 3
-  drawForward: 0
-  host: {fileID: 852939480}
 --- !u!114 &852939477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2302,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa30a984ba19b3469c9d7ba04ad41ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &852939481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852939474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1752314df59b543966c18f6cd3b56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  senses: {fileID: 852939477}
+  health: {fileID: 852939475}
+  player: {fileID: 0}
+  controller: {fileID: 852939478}
+  chaseSpeed: 3
+  searchSpeed: 1.8
+  rotateSpeed: 12
+  stoppingDistance: 1.2
+  gravity: -20
+  attackRange: 1.8
+  attackDamage: 10
+  attackCooldown: 1.2
+  searchDuration: 3
+  drawForward: 1
+  lastKnownPos: {x: 0, y: 0, z: 0}
+  attackTimer: 0
+  searchTimer: 0
 --- !u!1 &894819050
 GameObject:
   m_ObjectHideFlags: 0
