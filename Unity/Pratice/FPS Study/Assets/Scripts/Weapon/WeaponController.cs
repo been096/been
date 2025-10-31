@@ -102,14 +102,16 @@ public class WeaponController : MonoBehaviour
         // 4) 발사 처리(자동사격: 버튼 유지 시 연사)
         if (fireHeld == true)
         {
-            if (launcher != null && useBulletPrefab == true)
-            {
-                launcher.FireOne();
-            }
-            else
-            {
-                TryFire();
-            }
+            //if (launcher != null && useBulletPrefab == true)
+            //{
+            //    launcher.FireOne();
+            //}
+            //else
+            //{
+            //    TryFire();
+            //}
+
+            TryFire();
         }
     }
 

@@ -38,6 +38,8 @@ public class EnemyBrain : MonoBehaviour
     [Header("Debug")]
     public bool drawForward = false;            // 전방 디버그 레이.
 
+    public Animator animator;
+
     //====== 런타임 캐시(상태간 공유) ===============================================
     [HideInInspector] public Vector3 lastKnownPos; // 마지막으로 본 플레이어 좌표.
     [HideInInspector] public float attackTimer;     // 공격 쿨다운 남은 시간.
@@ -135,6 +137,48 @@ public class EnemyBrain : MonoBehaviour
 
         currentState = next;
         currentState.OnEnter();
+
+        SyncAnimatorWithState(currentState);
+    }
+
+    /// <summary>
+    /// 현재 상태에 따라 애니메이션 출력.
+    /// </summary>
+    /// <param name="st"></param>
+    private void SyncAnimatorWithState(EnemyState st)
+    {
+        if (animator == null)
+        {
+            return;
+        }
+
+        string n = st.Name();
+
+        // 기본값 초기화
+        // animator.SetBool("IsDead", false);
+        // animator.SetBool("IsMoving", false);
+        animator.SetFloat("Speed", 0.0f);
+
+        if (n == "Idle")
+        {
+            // Idle은 아무것도 안해도 됨.
+        }
+        else if (n == "Chase")
+        {
+            animator.SetFloat("Speed", 1.0f);   // BlendTree에서 Run쪽으로.
+        }
+        else if (n == "Search")
+        {
+            animator.SetFloat("Speed", 0.5f); // 천천히.
+        }
+        else if (n == "Attack")
+        {
+            animator.SetTrigger("Attack");
+        }
+        else if (n == "Dead")
+        {
+            animator.SetTrigger("Dead");
+        }
     }
 
     // ===== 공용 유틸(상태에서 호출) =============================================

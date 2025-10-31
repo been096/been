@@ -55,7 +55,7 @@ public class Health : MonoBehaviour, IDamagealbe
 
             if (destroyonDeath == true)
             {
-                Destroy(gameObject);
+                Destroy(gameObject, 2.0f);
             }
         }
     }
