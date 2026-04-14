@@ -81,7 +81,7 @@ public class MouseLook : MonoBehaviour
 
             // 3일차 구조 유지 : lookInput(프레임당 축 값) x 감도 x 10 x dt
             // Look 입력 반영(프레임 독립 보정)
-            float dx = lookInput.x * mouseSensitivity * 10f * dt;   // 좌우
+            float dx = lookInput.x * mouseSensitivity * sensitivityMultiplier * 10f * dt;   // 좌우
             float dy = lookInput.y * mouseSensitivity * 10f * dt;   // 상하
 
             yaw += dx;      // 우측 이동 시 +yaw
