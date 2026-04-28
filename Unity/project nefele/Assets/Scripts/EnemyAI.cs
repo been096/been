@@ -147,6 +147,23 @@ public class EnemyAI : MonoBehaviour
             else if (directionX < 0 && movingRight) Flip();
         }
 
+        // --- [핵심 수정!] 추적 중일 때도 몸 앞에 벽이 있는지 확인합니다 ---
+        Vector2 facingDirection = movingRight ? Vector2.right : Vector2.left;
+        float wallCheckDistance = 0.6f;
+        RaycastHit2D wallHit = Physics2D.Raycast(transform.position, facingDirection, wallCheckDistance, obstacleLayer);
+        bool hitSolidWall = wallHit.collider != null && !wallHit.collider.isTrigger;
+
+        if (hitSolidWall)
+        {
+            // 몸 앞에 벽이 가로막고 있다면, 헛걸음질을 하지 않고 그 자리에 멈춰 서서 위를 쳐다보게 합니다.
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
+        else
+        {
+            // 길을 막는 벽이 없다면 정상적으로 쫓아갑니다.
+            rb.linearVelocity = new Vector2((movingRight ? 1 : -1) * chaseSpeed, rb.linearVelocity.y);
+        }
+
         rb.linearVelocity = new Vector2((movingRight ? 1 : -1) * chaseSpeed, rb.linearVelocity.y);
     }
 
